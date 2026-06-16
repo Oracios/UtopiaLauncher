@@ -49,6 +49,7 @@ publish:
   provider: github
   owner: Oracios
   repo: UtopiaLauncher
+  releaseType: release
 
 directories:
   buildResources: 'build'
