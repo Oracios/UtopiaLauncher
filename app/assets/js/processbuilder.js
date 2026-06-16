@@ -38,7 +38,12 @@ class ProcessBuilder {
 
         this.usingLiteLoader = false
         this.usingFabricLoader = false
+        this.usingNeoForge = false
         this.llPath = null
+        // Tracks which mod jars the launcher copied into the instance mods/ folder
+        // for NeoForge, so they can be cleaned up on the next launch without touching
+        // user drop-in mods.
+        this.managedModsFile = path.join(this.gameDir, '.utopia-managed-mods.json')
     }
     
     /**
@@ -52,6 +57,9 @@ class ProcessBuilder {
         logger.info('Using liteloader:', this.usingLiteLoader)
         this.usingFabricLoader = this.server.modules.some(mdl => mdl.rawModule.type === Type.Fabric)
         logger.info('Using fabric loader:', this.usingFabricLoader)
+        // NeoForge is declared as a Forge/ForgeHosted module under the net.neoforged group.
+        this.usingNeoForge = !this.usingFabricLoader && this.server.modules.some(mdl => (mdl.rawModule.type === Type.ForgeHosted || mdl.rawModule.type === Type.Forge) && mdl.rawModule.id.startsWith('net.neoforged:'))
+        logger.info('Using NeoForge:', this.usingNeoForge)
         const modObj = this.resolveModConfiguration(ConfigManager.getModConfiguration(this.server.rawServer.id).mods, this.server.modules)
         
         // Mod list below 1.13
@@ -67,8 +75,15 @@ class ProcessBuilder {
         let args = this.constructJVMArguments(uberModArr, tempNativePath)
 
         if(mcVersionAtLeast('1.13', this.server.rawServer.minecraftVersion)){
-            //args = args.concat(this.constructModArguments(modObj.fMods))
-            args = args.concat(this.constructModList(modObj.fMods))
+            if(this.usingNeoForge){
+                // NeoForge (like Forge 1.20.3+) removed --fml.modLists / --fml.mavenRoots.
+                // Mods must instead live in the instance's mods/ folder for NeoForge to
+                // discover them, so we copy the enabled distribution mods there.
+                this.setupNeoForgeMods(modObj.fMods)
+            } else {
+                //args = args.concat(this.constructModArguments(modObj.fMods))
+                args = args.concat(this.constructModList(modObj.fMods))
+            }
         }
 
         // Hide access token
@@ -325,6 +340,49 @@ class ProcessBuilder {
 
     }
 
+    /**
+     * Prepare mods for NeoForge by copying the enabled distribution mods into the
+     * instance's mods/ folder. NeoForge (and Forge 1.20.3+) no longer support the
+     * --fml.modLists argument, so mods must be present in mods/ to be loaded.
+     *
+     * Mods copied by the launcher are tracked in a manifest so that mods which become
+     * disabled (or change between launches) are removed without deleting user drop-in mods.
+     *
+     * @param {Array.<Object>} mods An array of enabled mods to install.
+     */
+    setupNeoForgeMods(mods) {
+        const modsDir = path.join(this.gameDir, 'mods')
+        fs.ensureDirSync(modsDir)
+
+        // Remove mods the launcher placed on a previous launch.
+        let previouslyManaged = []
+        if(fs.existsSync(this.managedModsFile)) {
+            try {
+                previouslyManaged = fs.readJsonSync(this.managedModsFile)
+            } catch(err) {
+                logger.warn('Could not read managed mods manifest, ignoring.', err)
+            }
+        }
+        for(const fileName of previouslyManaged) {
+            const oldPath = path.join(modsDir, fileName)
+            if(fs.existsSync(oldPath)) {
+                fs.removeSync(oldPath)
+            }
+        }
+
+        // Copy the currently enabled mods into the mods/ folder.
+        const managed = []
+        for(const mod of mods) {
+            const src = mod.getPath()
+            const fileName = path.basename(src)
+            fs.copySync(src, path.join(modsDir, fileName))
+            managed.push(fileName)
+        }
+
+        fs.writeJsonSync(this.managedModsFile, managed)
+        logger.info(`Installed ${managed.length} NeoForge mod(s) into ${modsDir}.`)
+    }
+
     _processAutoConnectArg(args){
         if(ConfigManager.getAutoConnect() && this.server.rawServer.autoconnect){
             if(mcVersionAtLeast('1.20', this.server.rawServer.minecraftVersion)){
@@ -372,7 +430,7 @@ class ProcessBuilder {
 
         // Java Arguments
         if(process.platform === 'darwin'){
-            args.push('-Xdock:name=HeliosLauncher')
+            args.push('-Xdock:name=UtopiaLauncher')
             args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM(this.server.rawServer.id))
@@ -423,7 +481,7 @@ class ProcessBuilder {
 
         // Java Arguments
         if(process.platform === 'darwin'){
-            args.push('-Xdock:name=HeliosLauncher')
+            args.push('-Xdock:name=UtopiaLauncher')
             args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM(this.server.rawServer.id))
@@ -525,7 +583,7 @@ class ProcessBuilder {
                             val = args[i].replace(argDiscovery, tempNativePath)
                             break
                         case 'launcher_name':
-                            val = args[i].replace(argDiscovery, 'Helios-Launcher')
+                            val = args[i].replace(argDiscovery, 'Utopia-Launcher')
                             break
                         case 'launcher_version':
                             val = args[i].replace(argDiscovery, this.launcherVersion)

@@ -1,14 +1,14 @@
-appId: 'helioslauncher'
-productName: 'Helios Launcher'
+appId: 'fr.utopia.launcher'
+productName: 'Utopia Launcher'
 artifactName: '${productName}-setup-${version}.${ext}'
 
-copyright: 'Copyright © 2018-2026 Daniel Scalzi'
+copyright: 'Copyright © 2026 Utopia'
 
 asar: true
 compression: 'maximum'
 
 files:
-  - '!{dist,.gitignore,.vscode,docs,dev-app-update.yml,.nvmrc,eslint.config.mjs}'
+  - '!{dist,.gitignore,.vscode,docs,dev-app-update.yml,.nvmrc,eslint.config.mjs,IMPORT,tools,.github,.claude,CLAUDE.md}'
 
 extraResources:
   - 'libraries'
@@ -37,14 +37,18 @@ mac:
   category: 'public.app-category.games'
 
 # Linux Configuration
-linux: 
+linux:
   target: 'AppImage'
-  maintainer: 'Daniel Scalzi'
-  vendor: 'Daniel Scalzi'
-  synopsis: 'Modded Minecraft Launcher'
-  description: 'Custom launcher which allows users to join modded servers. All mods, configurations, and updates are handled automatically.'
+  maintainer: 'Hugo Loureiro <loureirohugo70@gmail.com>'
+  vendor: 'Utopia'
+  synopsis: 'Launcher Minecraft Utopia'
+  description: 'Launcher officiel du serveur Utopia. Mods, configurations et mises à jour sont téléchargés automatiquement.'
   category: 'Game'
 
+publish:
+  provider: github
+  owner: Oracios
+  repo: UtopiaLauncher
 
 directories:
   buildResources: 'build'

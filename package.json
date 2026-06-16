@@ -1,13 +1,17 @@
 {
-  "name": "helioslauncher",
-  "version": "2.2.1",
-  "productName": "Helios Launcher",
-  "description": "Modded Minecraft Launcher",
-  "author": "Daniel Scalzi (https://github.com/dscalzi/)",
-  "license": "UNLICENSED",
-  "homepage": "https://github.com/dscalzi/HeliosLauncher",
+  "name": "utopia-launcher",
+  "version": "1.0.0",
+  "productName": "Utopia Launcher",
+  "description": "Modded Utopia Launcher",
+  "author": {
+    "name": "Hugo Loureiro",
+    "email": "loureirohugo70@gmail.com",
+    "url": "https://github.com/Oracios/"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/Oracios/UtopiaLauncher",
   "bugs": {
-    "url": "https://github.com/dscalzi/HeliosLauncher/issues"
+    "url": "https://github.com/Oracios/UtopiaLauncher/issues"
   },
   "private": true,
   "main": "index.js",
@@ -47,6 +51,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dscalzi/HeliosLauncher.git"
+    "url": "git+https://github.com/Oracios/UtopiaLauncher.git"
   }
 }

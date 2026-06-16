@@ -1,0 +1,492 @@
+﻿{
+    "id":  "net.neoforged:neoforge:21.1.233:universal",
+    "name":  "NeoForge 21.1.233",
+    "type":  "ForgeHosted",
+    "artifact":  {
+                     "size":  3542450,
+                     "MD5":  "0d8b04926d967a337c05c75bf93f9c70",
+                     "url":  "https://maven.neoforged.net/releases/net/neoforged/neoforge/21.1.233/neoforge-21.1.233-universal.jar"
+                 },
+    "subModules":  [
+                       {
+                           "id":  "neoforge-21.1.233",
+                           "name":  "NeoForge (version.json)",
+                           "type":  "VersionManifest",
+                           "artifact":  {
+                                            "size":  21148,
+                                            "MD5":  "6e1e83a1bebf1d9dc85c0b6edba8a681",
+                                            "url":  "https://apk.nerysia.fr/utopia-laucher/versions/neoforge-21.1.233/neoforge-21.1.233.json"
+                                        }
+                       },
+                       {
+                           "id":  "net.neoforged.fancymodloader:earlydisplay:4.0.42",
+                           "name":  "NeoForge Library (net.neoforged.fancymodloader:earlydisplay:4.0.42)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  261718,
+                                            "MD5":  "6df1105e4016ee9992ca93cd0103e218",
+                                            "url":  "https://maven.neoforged.net/releases/net/neoforged/fancymodloader/earlydisplay/4.0.42/earlydisplay-4.0.42.jar"
+                                        }
+                       },
+                       {
+                           "id":  "net.neoforged.fancymodloader:loader:4.0.42",
+                           "name":  "NeoForge Library (net.neoforged.fancymodloader:loader:4.0.42)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  504899,
+                                            "MD5":  "1722666ba373811ef9b7022c0c4a5a73",
+                                            "url":  "https://maven.neoforged.net/releases/net/neoforged/fancymodloader/loader/4.0.42/loader-4.0.42.jar"
+                                        }
+                       },
+                       {
+                           "id":  "net.neoforged.accesstransformers:at-modlauncher:10.0.1",
+                           "name":  "NeoForge Library (net.neoforged.accesstransformers:at-modlauncher:10.0.1)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  2347,
+                                            "MD5":  "f65434f122b97b1ac8fe56ff54873b5f",
+                                            "url":  "https://maven.neoforged.net/releases/net/neoforged/accesstransformers/at-modlauncher/10.0.1/at-modlauncher-10.0.1.jar"
+                                        }
+                       },
+                       {
+                           "id":  "net.neoforged:accesstransformers:10.0.1",
+                           "name":  "NeoForge Library (net.neoforged:accesstransformers:10.0.1)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  67234,
+                                            "MD5":  "3a01a09a2b0900381dce48e118882849",
+                                            "url":  "https://maven.neoforged.net/releases/net/neoforged/accesstransformers/10.0.1/accesstransformers-10.0.1.jar"
+                                        }
+                       },
+                       {
+                           "id":  "net.neoforged:bus:8.0.5",
+                           "name":  "NeoForge Library (net.neoforged:bus:8.0.5)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  30340,
+                                            "MD5":  "95eee080d9de7cb764adcb8fa2ecf3fb",
+                                            "url":  "https://maven.neoforged.net/releases/net/neoforged/bus/8.0.5/bus-8.0.5.jar"
+                                        }
+                       },
+                       {
+                           "id":  "net.neoforged:coremods:7.0.3",
+                           "name":  "NeoForge Library (net.neoforged:coremods:7.0.3)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  22659,
+                                            "MD5":  "4527abf6b7116dae1c2178f7beab0ba2",
+                                            "url":  "https://maven.neoforged.net/releases/net/neoforged/coremods/7.0.3/coremods-7.0.3.jar"
+                                        }
+                       },
+                       {
+                           "id":  "cpw.mods:modlauncher:11.0.5",
+                           "name":  "NeoForge Library (cpw.mods:modlauncher:11.0.5)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  116486,
+                                            "MD5":  "70fa994f64b2620d20dc325bab758d1b",
+                                            "url":  "https://maven.neoforged.net/releases/cpw/mods/modlauncher/11.0.5/modlauncher-11.0.5.jar"
+                                        }
+                       },
+                       {
+                           "id":  "net.neoforged:mergetool:2.0.0:api",
+                           "name":  "NeoForge Library (net.neoforged:mergetool:2.0.0:api)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  2550,
+                                            "MD5":  "818b398f65b8dc5af802b721fd1d0b56",
+                                            "url":  "https://maven.neoforged.net/releases/net/neoforged/mergetool/2.0.0/mergetool-2.0.0-api.jar"
+                                        }
+                       },
+                       {
+                           "id":  "com.electronwill.night-config:toml:3.8.3",
+                           "name":  "NeoForge Library (com.electronwill.night-config:toml:3.8.3)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  39516,
+                                            "MD5":  "71c9f7b86422f206c0d78c1a0600fd3a",
+                                            "url":  "https://maven.neoforged.net/releases/com/electronwill/night-config/toml/3.8.3/toml-3.8.3.jar"
+                                        }
+                       },
+                       {
+                           "id":  "com.electronwill.night-config:core:3.8.3",
+                           "name":  "NeoForge Library (com.electronwill.night-config:core:3.8.3)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  382911,
+                                            "MD5":  "a69db71d5c9c274ff08f175d7c12cb1a",
+                                            "url":  "https://maven.neoforged.net/releases/com/electronwill/night-config/core/3.8.3/core-3.8.3.jar"
+                                        }
+                       },
+                       {
+                           "id":  "net.neoforged:JarJarSelector:0.4.1",
+                           "name":  "NeoForge Library (net.neoforged:JarJarSelector:0.4.1)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  17168,
+                                            "MD5":  "20d1fe8972655189f69845554ee1a4d1",
+                                            "url":  "https://maven.neoforged.net/releases/net/neoforged/JarJarSelector/0.4.1/JarJarSelector-0.4.1.jar"
+                                        }
+                       },
+                       {
+                           "id":  "net.neoforged:JarJarMetadata:0.4.1",
+                           "name":  "NeoForge Library (net.neoforged:JarJarMetadata:0.4.1)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  15648,
+                                            "MD5":  "c2f30969dd8b1dc8e3f78c731bd2c5c8",
+                                            "url":  "https://maven.neoforged.net/releases/net/neoforged/JarJarMetadata/0.4.1/JarJarMetadata-0.4.1.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.apache.maven:maven-artifact:3.8.5",
+                           "name":  "NeoForge Library (org.apache.maven:maven-artifact:3.8.5)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  58077,
+                                            "MD5":  "ce473b0d9fbfd10fe147f03fe8707d67",
+                                            "url":  "https://maven.neoforged.net/releases/org/apache/maven/maven-artifact/3.8.5/maven-artifact-3.8.5.jar"
+                                        }
+                       },
+                       {
+                           "id":  "net.jodah:typetools:0.6.3",
+                           "name":  "NeoForge Library (net.jodah:typetools:0.6.3)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  18281,
+                                            "MD5":  "d4a375bf382f726cf1a650ccb38a736c",
+                                            "url":  "https://maven.neoforged.net/releases/net/jodah/typetools/0.6.3/typetools-0.6.3.jar"
+                                        }
+                       },
+                       {
+                           "id":  "net.minecrell:terminalconsoleappender:1.3.0",
+                           "name":  "NeoForge Library (net.minecrell:terminalconsoleappender:1.3.0)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  16949,
+                                            "MD5":  "179d3abaf9736dbd8fbd4fa98e1c6ea1",
+                                            "url":  "https://maven.neoforged.net/releases/net/minecrell/terminalconsoleappender/1.3.0/terminalconsoleappender-1.3.0.jar"
+                                        }
+                       },
+                       {
+                           "id":  "net.fabricmc:sponge-mixin:0.15.2+mixin.0.8.7",
+                           "name":  "NeoForge Library (net.fabricmc:sponge-mixin:0.15.2+mixin.0.8.7)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  1494751,
+                                            "MD5":  "4808c070bf19415a5cb4a0cb5e569b12",
+                                            "url":  "https://maven.neoforged.net/releases/net/fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/sponge-mixin-0.15.2+mixin.0.8.7.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.openjdk.nashorn:nashorn-core:15.4",
+                           "name":  "NeoForge Library (org.openjdk.nashorn:nashorn-core:15.4)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  2167292,
+                                            "MD5":  "a9b3360e6a486cf62c1952c7816b7d97",
+                                            "url":  "https://maven.neoforged.net/releases/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.apache.commons:commons-lang3:3.14.0",
+                           "name":  "NeoForge Library (org.apache.commons:commons-lang3:3.14.0)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  657952,
+                                            "MD5":  "4e5c3f5e6b0b965ef241d7d72ac8971f",
+                                            "url":  "https://libraries.minecraft.net/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar"
+                                        }
+                       },
+                       {
+                           "id":  "cpw.mods:bootstraplauncher:2.0.2",
+                           "name":  "NeoForge Library (cpw.mods:bootstraplauncher:2.0.2)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  11116,
+                                            "MD5":  "169bd8c006e69d83267466e311d4049d",
+                                            "url":  "https://maven.neoforged.net/releases/cpw/mods/bootstraplauncher/2.0.2/bootstraplauncher-2.0.2.jar"
+                                        }
+                       },
+                       {
+                           "id":  "cpw.mods:securejarhandler:3.0.8",
+                           "name":  "NeoForge Library (cpw.mods:securejarhandler:3.0.8)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  103765,
+                                            "MD5":  "eb0d5290a2681c2dbeb8088b82e0fbf9",
+                                            "url":  "https://maven.neoforged.net/releases/cpw/mods/securejarhandler/3.0.8/securejarhandler-3.0.8.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.ow2.asm:asm-commons:9.8",
+                           "name":  "NeoForge Library (org.ow2.asm:asm-commons:9.8)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  73498,
+                                            "MD5":  "c8c3d9ccf240144e74d94ff658b024c9",
+                                            "url":  "https://maven.neoforged.net/releases/org/ow2/asm/asm-commons/9.8/asm-commons-9.8.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.ow2.asm:asm-util:9.8",
+                           "name":  "NeoForge Library (org.ow2.asm:asm-util:9.8)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  94559,
+                                            "MD5":  "62498ef324bdab15f407d703f7d78d19",
+                                            "url":  "https://maven.neoforged.net/releases/org/ow2/asm/asm-util/9.8/asm-util-9.8.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.ow2.asm:asm-analysis:9.8",
+                           "name":  "NeoForge Library (org.ow2.asm:asm-analysis:9.8)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  35151,
+                                            "MD5":  "3d63508405f5610fc2ea673ff5471553",
+                                            "url":  "https://maven.neoforged.net/releases/org/ow2/asm/asm-analysis/9.8/asm-analysis-9.8.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.ow2.asm:asm-tree:9.8",
+                           "name":  "NeoForge Library (org.ow2.asm:asm-tree:9.8)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  51934,
+                                            "MD5":  "4ab1aaec43c77a2d9b56e6d6d496f705",
+                                            "url":  "https://maven.neoforged.net/releases/org/ow2/asm/asm-tree/9.8/asm-tree-9.8.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.ow2.asm:asm:9.8",
+                           "name":  "NeoForge Library (org.ow2.asm:asm:9.8)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  126113,
+                                            "MD5":  "f5adf3bfc54fb3d2cd8e3a1f275084bc",
+                                            "url":  "https://maven.neoforged.net/releases/org/ow2/asm/asm/9.8/asm-9.8.jar"
+                                        }
+                       },
+                       {
+                           "id":  "net.neoforged:JarJarFileSystems:0.4.1",
+                           "name":  "NeoForge Library (net.neoforged:JarJarFileSystems:0.4.1)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  31807,
+                                            "MD5":  "8d75021e5aeb04652b4b9ae3df500b9e",
+                                            "url":  "https://maven.neoforged.net/releases/net/neoforged/JarJarFileSystems/0.4.1/JarJarFileSystems-0.4.1.jar"
+                                        }
+                       },
+                       {
+                           "id":  "net.sf.jopt-simple:jopt-simple:5.0.4",
+                           "name":  "NeoForge Library (net.sf.jopt-simple:jopt-simple:5.0.4)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  78146,
+                                            "MD5":  "eb0d9dffe9b0eddead68fe678be76c49",
+                                            "url":  "https://libraries.minecraft.net/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.slf4j:slf4j-api:2.0.9",
+                           "name":  "NeoForge Library (org.slf4j:slf4j-api:2.0.9)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  64579,
+                                            "MD5":  "45630e54b0f0ac2b3c80462515ad8fda",
+                                            "url":  "https://libraries.minecraft.net/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.antlr:antlr4-runtime:4.13.1",
+                           "name":  "NeoForge Library (org.antlr:antlr4-runtime:4.13.1)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  326305,
+                                            "MD5":  "dd465ddb2a8dbf69eb6c94e69a0d5f0f",
+                                            "url":  "https://maven.neoforged.net/releases/org/antlr/antlr4-runtime/4.13.1/antlr4-runtime-4.13.1.jar"
+                                        }
+                       },
+                       {
+                           "id":  "com.mojang:logging:1.2.7",
+                           "name":  "NeoForge Library (com.mojang:logging:1.2.7)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  15343,
+                                            "MD5":  "d01ea99740509a58222a426cc36f5456",
+                                            "url":  "https://libraries.minecraft.net/com/mojang/logging/1.2.7/logging-1.2.7.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.apache.logging.log4j:log4j-slf4j2-impl:2.22.1",
+                           "name":  "NeoForge Library (org.apache.logging.log4j:log4j-slf4j2-impl:2.22.1)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  27364,
+                                            "MD5":  "82cc94f378ffb853efe084ee9bf4c463",
+                                            "url":  "https://libraries.minecraft.net/org/apache/logging/log4j/log4j-slf4j2-impl/2.22.1/log4j-slf4j2-impl-2.22.1.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.apache.logging.log4j:log4j-core:2.22.1",
+                           "name":  "NeoForge Library (org.apache.logging.log4j:log4j-core:2.22.1)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  1900022,
+                                            "MD5":  "b5987ee449d4be4244e2e214683c45af",
+                                            "url":  "https://libraries.minecraft.net/org/apache/logging/log4j/log4j-core/2.22.1/log4j-core-2.22.1.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.apache.logging.log4j:log4j-api:2.22.1",
+                           "name":  "NeoForge Library (org.apache.logging.log4j:log4j-api:2.22.1)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  335001,
+                                            "MD5":  "27db0eb89ae965179480df00d8d1cf03",
+                                            "url":  "https://libraries.minecraft.net/org/apache/logging/log4j/log4j-api/2.22.1/log4j-api-2.22.1.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.jline:jline-reader:3.20.0",
+                           "name":  "NeoForge Library (org.jline:jline-reader:3.20.0)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  171052,
+                                            "MD5":  "9ece57ca56a1688d1d09fe2c48e7a292",
+                                            "url":  "https://maven.neoforged.net/releases/org/jline/jline-reader/3.20.0/jline-reader-3.20.0.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.jline:jline-terminal:3.20.0",
+                           "name":  "NeoForge Library (org.jline:jline-terminal:3.20.0)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  228481,
+                                            "MD5":  "e45dace437743e6b5e75c81eb455fd3e",
+                                            "url":  "https://maven.neoforged.net/releases/org/jline/jline-terminal/3.20.0/jline-terminal-3.20.0.jar"
+                                        }
+                       },
+                       {
+                           "id":  "commons-io:commons-io:2.15.1",
+                           "name":  "NeoForge Library (commons-io:commons-io:2.15.1)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  501218,
+                                            "MD5":  "84351f7991a0e6722f00e96a4ccc376f",
+                                            "url":  "https://libraries.minecraft.net/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar"
+                                        }
+                       },
+                       {
+                           "id":  "net.minecraftforge:srgutils:0.4.15",
+                           "name":  "NeoForge Library (net.minecraftforge:srgutils:0.4.15)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  69393,
+                                            "MD5":  "79812fd073afe1c046bc1ea46ad28095",
+                                            "url":  "https://maven.neoforged.net/releases/net/minecraftforge/srgutils/0.4.15/srgutils-0.4.15.jar"
+                                        }
+                       },
+                       {
+                           "id":  "com.google.guava:guava:32.1.2-jre",
+                           "name":  "NeoForge Library (com.google.guava:guava:32.1.2-jre)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  3041591,
+                                            "MD5":  "5fe031b3b35ed56182478811a931d617",
+                                            "url":  "https://libraries.minecraft.net/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar"
+                                        }
+                       },
+                       {
+                           "id":  "com.google.guava:failureaccess:1.0.1",
+                           "name":  "NeoForge Library (com.google.guava:failureaccess:1.0.1)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  4617,
+                                            "MD5":  "091883993ef5bfa91da01dcc8fc52236",
+                                            "url":  "https://libraries.minecraft.net/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar"
+                                        }
+                       },
+                       {
+                           "id":  "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+                           "name":  "NeoForge Library (com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  2199,
+                                            "MD5":  "d094c22570d65e132c19cea5d352e381",
+                                            "url":  "https://libraries.minecraft.net/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar"
+                                        }
+                       },
+                       {
+                           "id":  "com.google.code.findbugs:jsr305:3.0.2",
+                           "name":  "NeoForge Library (com.google.code.findbugs:jsr305:3.0.2)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  19936,
+                                            "MD5":  "dd83accb899363c32b07d7a1b2e4ce40",
+                                            "url":  "https://libraries.minecraft.net/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.checkerframework:checker-qual:3.33.0",
+                           "name":  "NeoForge Library (org.checkerframework:checker-qual:3.33.0)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  223979,
+                                            "MD5":  "fc9418b779d9d57dcd52197006cbdb9b",
+                                            "url":  "https://libraries.minecraft.net/org/checkerframework/checker-qual/3.33.0/checker-qual-3.33.0.jar"
+                                        }
+                       },
+                       {
+                           "id":  "com.google.errorprone:error_prone_annotations:2.18.0",
+                           "name":  "NeoForge Library (com.google.errorprone:error_prone_annotations:2.18.0)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  16017,
+                                            "MD5":  "64145d0e7fee5a69ed7b84cf402de998",
+                                            "url":  "https://libraries.minecraft.net/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar"
+                                        }
+                       },
+                       {
+                           "id":  "com.google.j2objc:j2objc-annotations:2.8",
+                           "name":  "NeoForge Library (com.google.j2objc:j2objc-annotations:2.8)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  9301,
+                                            "MD5":  "c50af69b704dc91050efb98e0dff66d1",
+                                            "url":  "https://libraries.minecraft.net/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar"
+                                        }
+                       },
+                       {
+                           "id":  "com.google.code.gson:gson:2.10.1",
+                           "name":  "NeoForge Library (com.google.code.gson:gson:2.10.1)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  283367,
+                                            "MD5":  "df6097815738cb31fc56391553210843",
+                                            "url":  "https://libraries.minecraft.net/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar"
+                                        }
+                       },
+                       {
+                           "id":  "org.codehaus.plexus:plexus-utils:3.3.0",
+                           "name":  "NeoForge Library (org.codehaus.plexus:plexus-utils:3.3.0)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  263253,
+                                            "MD5":  "3ae76ff0195ada460d495efe1fb50d17",
+                                            "url":  "https://maven.neoforged.net/releases/org/codehaus/plexus/plexus-utils/3.3.0/plexus-utils-3.3.0.jar"
+                                        }
+                       },
+                       {
+                           "id":  "com.machinezoo.noexception:noexception:1.7.1",
+                           "name":  "NeoForge Library (com.machinezoo.noexception:noexception:1.7.1)",
+                           "type":  "Library",
+                           "artifact":  {
+                                            "size":  250861,
+                                            "MD5":  "fcc3e4df4990088c964f687b62f7c448",
+                                            "url":  "https://maven.neoforged.net/releases/com/machinezoo/noexception/noexception/1.7.1/noexception-1.7.1.jar"
+                                        }
+                       }
+                   ]
+}

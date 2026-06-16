@@ -1,211 +1,139 @@
-<p align="center"><img src="./app/assets/images/SealCircle.png" width="150px" height="150px" alt="aventium softworks"></p>
+<p align="center"><img src="./app/assets/images/SealCircle.png" width="150px" height="150px" alt="Utopia"></p>
 
-<h1 align="center">Helios Launcher</h1>
+<p align="center"><img src="./app/assets/images/UtopiaTitle.png" width="420px" alt="Utopia Launcher"></p>
 
-<em><h5 align="center">(formerly Electron Launcher)</h5></em>
+<h1 align="center">Utopia Launcher</h1>
 
-[<p align="center"><img src="https://img.shields.io/github/actions/workflow/status/dscalzi/HeliosLauncher/build.yml?branch=master&style=for-the-badge" alt="gh actions">](https://github.com/dscalzi/HeliosLauncher/actions) [<img src="https://img.shields.io/github/downloads/dscalzi/HeliosLauncher/total.svg?style=for-the-badge" alt="downloads">](https://github.com/dscalzi/HeliosLauncher/releases) <img src="https://forthebadge.com/images/badges/winter-is-coming.svg"  height="28px" alt="winter-is-coming"></p>
+<p align="center">Rejoins le serveur <strong>Utopia</strong> sans te soucier d'installer Java, NeoForge ou les mods. On s'occupe de tout pour toi.</p>
 
-<p align="center">Join modded servers without worrying about installing Java, Forge, or other mods. We'll handle that for you.</p>
+<p align="center">
+  <a href="https://github.com/Oracios/UtopiaLauncher/releases"><img src="https://img.shields.io/github/v/release/Oracios/UtopiaLauncher?include_prereleases&style=for-the-badge" alt="release"></a>
+  <a href="https://github.com/Oracios/UtopiaLauncher/releases"><img src="https://img.shields.io/github/downloads/Oracios/UtopiaLauncher/total?style=for-the-badge" alt="téléchargements"></a>
+  <a href="https://discord.gg/QGcZWFQBgU"><img src="https://img.shields.io/badge/Discord-Rejoindre-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="discord"></a>
+</p>
 
-![Screenshot 1](https://i.imgur.com/6o7SmH6.png)
-![Screenshot 2](https://i.imgur.com/x3B34n1.png)
+---
 
-## Features
+## 🌴 Bienvenue sur Utopia 3.5
 
-* 🔒 Full account management.
-  * Add multiple accounts and easily switch between them.
-  * Microsoft (OAuth 2.0) + Mojang (Yggdrasil) authentication fully supported.
-  * Credentials are never stored and transmitted directly to Mojang.
-* 📂 Efficient asset management.
-  * Receive client updates as soon as we release them.
-  * Files are validated before launch. Corrupt or incorrect files will be redownloaded.
-* ☕ **Automatic Java validation.**
-  * If you have an incompatible version of Java installed, we'll install the right one *for you*.
-  * You do not need to have Java installed to run the launcher.
-* 📰 News feed natively built into the launcher.
-* ⚙️ Intuitive settings management, including a Java control panel.
-* Supports all of our servers.
-  * Switch between server configurations with ease.
-  * View the player count of the selected server.
-* Automatic updates. That's right, the launcher updates itself.
-*  View the status of Mojang's services.
+> Utopia 3.5 est un serveur Minecraft **semi-RP** pensé avant tout pour créer une aventure communautaire unique. Ici, le RP est encouragé — parce qu'il permet de créer des situations drôles, des histoires mémorables et des interactions entre joueurs — mais il n'est **jamais obligatoire**. Vous pouvez vous investir pleinement dans votre personnage ou simplement profiter du serveur à votre manière.
 
-This is not an exhaustive list. Download and install the launcher to gauge all it can do!
+### 🏝️ Une île, une communauté
 
-#### Need Help? [Check the wiki.][wiki]
+Cette nouvelle saison prend place sur une **immense île tropicale** où tous les joueurs sont réunis. L'objectif est simple : favoriser les rencontres, les échanges, les rivalités commerciales et les projets personnels. Personne ne peut partir s'isoler à des milliers de blocs ; tout le monde partage le même espace de vie, ce qui rend le monde beaucoup plus **vivant et dynamique**.
 
-#### Like the project? Leave a ⭐ star on the repository!
+### ⚙️ Un modpack pensé pour l'interaction
 
-## Downloads
+Le modpack s'inspire de l'esprit d'**Holycube Révolution** et de **Crazy Town**, en mélangeant progression, économie, automatisation, commerce, événements et vie communautaire. **Create** occupe une place centrale dans l'expérience, mais le serveur ne repose pas uniquement sur ce mod. Tout a été pensé pour encourager les interactions entre joueurs, le développement d'activités économiques et la création de moments marquants.
 
-You can download from [GitHub Releases](https://github.com/dscalzi/HeliosLauncher/releases)
+### 💰 Une économie au cœur du jeu
 
-#### Latest Release
+L'économie est l'un des piliers majeurs du serveur. Grâce à la monnaie officielle, les **Utopièces**, chacun peut développer son activité, vendre ses productions, proposer ses services et tenter de devenir l'un des joueurs les plus riches de l'île. Les commerces, les échanges et les opportunités seront au cœur de la progression.
 
-[![](https://img.shields.io/github/release/dscalzi/HeliosLauncher.svg?style=flat-square)](https://github.com/dscalzi/HeliosLauncher/releases/latest)
+Pour préserver l'île et maintenir cette proximité entre les joueurs, les **ressources principales devront être récupérées en dehors de celle-ci**. Au-delà des océans qui entourent le territoire principal se trouve une zone dédiée à l'exploration et à la récolte de ressources — l'île reste avant tout un lieu de vie, de commerce et de rencontres.
 
-#### Latest Pre-Release
-[![](https://img.shields.io/github/release/dscalzi/HeliosLauncher/all.svg?style=flat-square)](https://github.com/dscalzi/HeliosLauncher/releases)
+### 🎉 Des événements réguliers
 
-**Supported Platforms**
+Utopia 3.5 dispose d'un **serveur dédié aux événements**. Plusieurs fois par semaine, des animations seront organisées par l'équipe événementielle, avec à la clé des récompenses, des Utopièces et parfois même des cadeaux spéciaux. Ces événements constitueront des moments importants de la vie du serveur et offriront régulièrement de nouvelles occasions de se démarquer.
 
-If you download from the [Releases](https://github.com/dscalzi/HeliosLauncher/releases) tab, select the installer for your system.
+### 📖 Écris ton histoire
 
-| Platform | File |
-| -------- | ---- |
-| Windows x64 | `Helios-Launcher-setup-VERSION.exe` |
-| macOS x64 | `Helios-Launcher-setup-VERSION-x64.dmg` |
-| macOS arm64 | `Helios-Launcher-setup-VERSION-arm64.dmg` |
-| Linux x64 | `Helios-Launcher-setup-VERSION.AppImage` |
+L'objectif final n'est pas seulement de construire une base ou d'automatiser des usines : c'est de faire vivre **une ville, une économie et une communauté**. De créer des souvenirs, des histoires et des moments dont on se souviendra encore plusieurs mois après la fin de la saison.
 
-## Console
+Enfin, plusieurs **créateurs de contenu** participeront à l'aventure. Gardez donc à l'esprit que de nombreux moments seront enregistrés ou diffusés : le respect des autres joueurs et une bonne ambiance seront essentiels pour que chacun profite pleinement de l'expérience.
 
-To open the console, use the following keybind.
+**Bienvenue sur Utopia 3.5. À vous maintenant d'écrire l'histoire de l'île.** 🌅
+
+---
+
+## ✨ Fonctionnalités
+
+* 🔒 **Gestion complète des comptes.**
+  * Ajoute plusieurs comptes et passe de l'un à l'autre en un clic.
+  * Connexion **Microsoft (OAuth 2.0)** entièrement prise en charge.
+  * Tes identifiants ne sont jamais stockés.
+* 📂 **Gestion automatique du modpack.**
+  * Reçois les mises à jour du serveur dès leur sortie.
+  * Les fichiers sont vérifiés avant le lancement : tout fichier corrompu ou manquant est re-téléchargé.
+* ☕ **Validation automatique de Java.**
+  * Pas la bonne version de Java ? On installe la bonne *pour toi*.
+  * Tu n'as même pas besoin d'avoir Java installé.
+* 🧩 **NeoForge géré automatiquement** — le bon NeoForge et toutes ses bibliothèques sont installés sans rien faire.
+* 🌗 **Thème jour / nuit** — le fond du launcher s'adapte selon l'heure.
+* 📰 Fil d'actualités intégré au launcher.
+* ⚙️ Réglages intuitifs, dont un panneau de contrôle Java (RAM, etc.).
+* 🔄 **Mises à jour automatiques** — le launcher se met à jour tout seul.
+
+---
+
+## 📥 Téléchargement
+
+Récupère la dernière version depuis les [GitHub Releases](https://github.com/Oracios/UtopiaLauncher/releases).
+
+| Plateforme | Fichier |
+| ---------- | ------- |
+| Windows x64 | `Utopia-Launcher-setup-VERSION.exe` |
+| Linux x64   | `Utopia-Launcher-setup-VERSION.AppImage` |
+
+> [!NOTE]
+> Le serveur Utopia tourne en **Minecraft 1.21.1 — NeoForge**.
+
+---
+
+## 🖥️ Console
+
+Pour ouvrir la console (en cas de problème) :
 
 ```console
 ctrl + shift + i
 ```
 
-Ensure that you have the console tab selected. Do not paste anything into the console unless you are 100% sure of what it will do. Pasting the wrong thing can expose sensitive information.
-
-#### Export Output to a File
-
-If you want to export the console output, simply right click anywhere on the console and click **Save as..**
-
-![console example](https://i.imgur.com/T5e73jP.png)
-
-
-## Development
-
-This section details the setup of a basic developmentment environment.
-
-### Getting Started
-
-**System Requirements**
-
-* [Node.js][nodejs] v22
+Assure-toi que l'onglet **Console** est sélectionné. Ne colle **jamais** quoi que ce soit dans la console si tu n'es pas sûr à 100 % de ce que ça fait — ça peut exposer des informations sensibles.
 
 ---
 
-**Clone and Install Dependencies**
+## 🛠️ Développement
+
+### Prérequis
+
+* [Node.js](https://nodejs.org/en/) **v22**
+
+### Installation
 
 ```console
-> git clone https://github.com/dscalzi/HeliosLauncher.git
-> cd HeliosLauncher
-> npm install
+git clone https://github.com/Oracios/UtopiaLauncher.git
+cd UtopiaLauncher
+npm install
 ```
 
----
-
-**Launch Application**
+### Lancer en mode dev
 
 ```console
-> npm start
+npm start
 ```
 
----
+### Construire l'installeur
 
-**Build Installers**
-
-To build for your current platform.
-
-```console
-> npm run dist
-```
-
-Build for a specific platform.
-
-| Platform    | Command              |
+| Plateforme  | Commande             |
 | ----------- | -------------------- |
 | Windows x64 | `npm run dist:win`   |
-| macOS       | `npm run dist:mac`   |
 | Linux x64   | `npm run dist:linux` |
+| Plateforme courante | `npm run dist` |
 
-Builds for macOS may not work on Windows/Linux and vice-versa.
-
----
-
-### Visual Studio Code
-
-All development of the launcher should be done using [Visual Studio Code][vscode].
-
-Paste the following into `.vscode/launch.json`
-
-```JSON
-{
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "Debug Main Process",
-      "type": "node",
-      "request": "launch",
-      "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/node_modules/electron/cli.js",
-      "args" : ["."],
-      "outputCapture": "std"
-    },
-    {
-      "name": "Debug Renderer Process",
-      "type": "chrome",
-      "request": "launch",
-      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
-      "windows": {
-        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
-      },
-      "runtimeArgs": [
-        "${workspaceFolder}/.",
-        "--remote-debugging-port=9222"
-      ],
-      "webRoot": "${workspaceFolder}"
-    }
-  ]
-}
-```
-
-This adds two debug configurations.
-
-#### Debug Main Process
-
-This allows you to debug Electron's [main process][mainprocess]. You can debug scripts in the [renderer process][rendererprocess] by opening the DevTools Window.
-
-#### Debug Renderer Process
-
-This allows you to debug Electron's [renderer process][rendererprocess]. This requires you to install the [Debugger for Chrome][chromedebugger] extension.
-
-Note that you **cannot** open the DevTools window while using this debug configuration. Chromium only allows one debugger, opening another will crash the program.
+> 📖 La génération du `distribution.json` (modpack NeoForge) est documentée dans [tools/README-UTOPIA.md](tools/README-UTOPIA.md).
 
 ---
 
-### Note on Third-Party Usage
+## 💬 Communauté
 
-Please give credit to the original author and provide a link to the original source. This is free software, please do at least this much.
+Le meilleur moyen de nous contacter, c'est sur Discord :
 
-For instructions on setting up Microsoft Authentication, see https://github.com/dscalzi/HeliosLauncher/blob/master/docs/MicrosoftAuth.md.
-
----
-
-## Resources
-
-* [Wiki][wiki]
-* [Nebula (Create Distribution.json)][nebula]
-* [v2 Rewrite Branch (Inactive)][v2branch]
-
-The best way to contact the developers is on Discord.
-
-[![discord](https://discordapp.com/api/guilds/211524927831015424/embed.png?style=banner3)][discord]
+<p align="center"><a href="https://discord.gg/QGcZWFQBgU"><img src="https://img.shields.io/badge/Rejoindre%20le%20Discord%20Utopia-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord Utopia"></a></p>
 
 ---
 
-### See you ingame.
+## 🙏 Crédits
 
+Utopia Launcher est basé sur [Helios Launcher](https://github.com/dscalzi/HeliosLauncher) de **Daniel Scalzi**, sous licence MIT. Un grand merci à lui et à la communauté Helios.
 
-[nodejs]: https://nodejs.org/en/ 'Node.js'
-[vscode]: https://code.visualstudio.com/ 'Visual Studio Code'
-[mainprocess]: https://electronjs.org/docs/tutorial/application-architecture#main-and-renderer-processes 'Main Process'
-[rendererprocess]: https://electronjs.org/docs/tutorial/application-architecture#main-and-renderer-processes 'Renderer Process'
-[chromedebugger]: https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome 'Debugger for Chrome'
-[discord]: https://discord.gg/zNWUXdt 'Discord'
-[wiki]: https://github.com/dscalzi/HeliosLauncher/wiki 'wiki'
-[nebula]: https://github.com/dscalzi/Nebula 'dscalzi/Nebula'
-[v2branch]: https://github.com/dscalzi/HeliosLauncher/tree/ts-refactor 'v2 branch'
+<p align="center">À bientôt en jeu. 🌍</p>

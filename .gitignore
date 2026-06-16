@@ -4,3 +4,7 @@
 /target/
 /logs/
 /dist/
+# Dossier source (ancien launcher Nerysia + assets) — ne pas committer
+/IMPORT/
+# Fichiers NeoForge à héberger sur le FTP (générés par generate-neoforge-core.ps1)
+/tools/neoforge-upload/

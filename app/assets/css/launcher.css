@@ -2471,6 +2471,17 @@ input:checked + .toggleSwitchSlider:before {
     display: inline-flex;
     width: 70%;
     height: 100%;
+    justify-content: center;
+}
+#utopiaTitleContainer {
+    margin-top: 40px;
+    user-select: none;
+    pointer-events: none;
+}
+#utopiaTitle {
+    height: 90px;
+    width: auto;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6));
 }
 #landingContainer > #upper > #right {
     display: inline-flex;
