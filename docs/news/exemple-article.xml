@@ -1,0 +1,34 @@
+<!--
+  EXEMPLE D'ARTICLE — copie le bloc <item>...</item> ci-dessous et colle-le
+  dans docs/feed.xml, juste apres <channel> (le plus recent doit etre en haut).
+  Ce fichier n'est PAS publie : c'est juste un modele de reference.
+-->
+    <item>
+      <title>Mise à jour du modpack — Saison Utopia 3.5</title>
+      <link>https://apk.nerysia.fr</link>
+      <pubDate>Tue, 17 Jun 2026 19:00:00 +0200</pubDate>
+      <dc:creator>Oracios</dc:creator>
+      <slash:comments>0</slash:comments>
+      <content:encoded><![CDATA[
+        <h2>🔧 Nouvelle mise à jour disponible !</h2>
+        <p>Une mise à jour du modpack vient d'arriver. Relance simplement le launcher pour la télécharger automatiquement.</p>
+
+        <h3>✨ Nouveautés</h3>
+        <ul>
+          <li><strong>Nouveau système</strong> ajouté sur l'île</li>
+          <li>Équilibrage de l'économie en <code>Utopièces</code></li>
+          <li>Nouveaux décors et meubles</li>
+        </ul>
+
+        <h3>🐛 Corrections</h3>
+        <ul>
+          <li>Correction d'un bug de duplication</li>
+          <li>Optimisations de performances</li>
+        </ul>
+
+        <h3>🎉 Événement à venir</h3>
+        <p>Rendez-vous ce week-end pour un événement spécial avec des récompenses en Utopièces ! Détails sur le <a href="https://discord.gg/QGcZWFQBgU">Discord</a>.</p>
+
+        <p><em>Bon jeu sur Utopia ! 🌴</em></p>
+      ]]></content:encoded>
+    </item>

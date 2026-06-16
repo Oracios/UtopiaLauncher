@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+  <channel>
+    <title>Utopia News</title>
+    <link>https://apk.nerysia.fr</link>
+    <description>Actualités du serveur Utopia</description>
+    <language>fr-FR</language>
+
+    <!-- ============================================ -->
+    <!-- ARTICLE 1 — Le plus récent EN PREMIER        -->
+    <!-- ============================================ -->
+    <item>
+      <title>Bienvenue sur Utopia 3.5 !</title>
+      <link>https://apk.nerysia.fr</link>
+      <pubDate>Mon, 16 Jun 2026 20:00:00 +0200</pubDate>
+      <dc:creator>Oracios</dc:creator>
+      <slash:comments>0</slash:comments>
+      <content:encoded><![CDATA[
+        <h2>🌴 La nouvelle saison est là !</h2>
+        <p>Bienvenue sur <strong>Utopia 3.5</strong>, un serveur Minecraft <strong>1.21.1 — NeoForge</strong> semi-RP basé sur une immense île tropicale partagée par tous les joueurs.</p>
+
+        <h3>🎮 Pour jouer</h3>
+        <ol>
+          <li>Connecte-toi avec ton compte <strong>Microsoft</strong> dans le launcher</li>
+          <li>Clique sur <strong>Jouer</strong></li>
+          <li>Le launcher installe NeoForge et tout le modpack automatiquement</li>
+        </ol>
+
+        <h3>✨ Au programme</h3>
+        <ul>
+          <li>Une économie centrée sur les <strong>Utopièces</strong></li>
+          <li><strong>Create</strong> et l'automatisation au cœur de l'aventure</li>
+          <li>Des <strong>événements</strong> plusieurs fois par semaine</li>
+          <li>Du commerce, du RP (jamais obligatoire) et de la vie communautaire</li>
+        </ul>
+
+        <p><em>À toi d'écrire l'histoire de l'île ! 🌅</em></p>
+      ]]></content:encoded>
+    </item>
+
+    <!-- ============================================ -->
+    <!-- ARTICLE 2 — Exemple (tu peux le supprimer)   -->
+    <!-- ============================================ -->
+    <item>
+      <title>Rejoins le Discord !</title>
+      <link>https://discord.gg/QGcZWFQBgU</link>
+      <pubDate>Mon, 16 Jun 2026 18:00:00 +0200</pubDate>
+      <dc:creator>Oracios</dc:creator>
+      <slash:comments>0</slash:comments>
+      <content:encoded><![CDATA[
+        <h2>💬 Toute la communauté est sur Discord</h2>
+        <p>Annonces, événements, entraide et discussions : rejoins le <a href="https://discord.gg/QGcZWFQBgU">Discord Utopia</a> pour ne rien rater.</p>
+      ]]></content:encoded>
+    </item>
+
+  </channel>
+</rss>

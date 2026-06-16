@@ -51,6 +51,10 @@ EXCLUDE_PATTERNS = [
     re.compile(r"^fancymenu_data/"),
     re.compile(r"^config/cobblemonintegrations-common-1\.toml\.bak$"),
     re.compile(r"^config/sound_physics_remastered/sound_rates\.properties$"),
+    re.compile(r"^waypoints/"),
+    re.compile(r"^simplebackups/"),
+    re.compile(r"^schematics/"),
+    re.compile(r"^dynamic-resource-pack-cache/"),
 ]
 
 # Vieilles versions de mods a NE PAS distribuer (gardees sur FTP en backup)
@@ -256,6 +260,13 @@ def ftp_upload_file(ftp: ftplib.FTP, local_path: Path, remote_path: str) -> None
 # ----------------------------------------------------------------
 # Module builders
 # ----------------------------------------------------------------
+def load_neoforge_core():
+    """Charge le bloc coeur NeoForge genere par generate-neoforge-core.ps1."""
+    core_path = Path(__file__).parent / "neoforge-core.json"
+    with open(core_path, "r", encoding="utf-8-sig") as f:
+        return json.load(f)
+
+
 def build_mod_entry(ftp, cache, jar_name, ftp_subdir, remote_size, url_subpath, required=None):
     """
     Build a FabricMod module entry. Uses cache to skip download if size matches.
@@ -274,9 +285,9 @@ def build_mod_entry(ftp, cache, jar_name, ftp_subdir, remote_size, url_subpath, 
         print(f"-> {md5} ({time.time()-t0:.1f}s)")
 
     entry = {
-        "id": f"generated.fabricmod:{base_id}:1.0.0@jar",
+        "id": f"generated.forgemod:{base_id}:1.0.0@jar",
         "name": base_id,
-        "type": "FabricMod",
+        "type": "ForgeMod",
         "artifact": {
             "size": remote_size,
             "MD5": md5,
@@ -354,39 +365,39 @@ def main():
     modules = []
 
     # 1. Fabric Core
-    print("[1/4] Ajout du bloc Fabric Core (statique)")
-    modules.append(FABRIC_CORE_BLOCK)
+    print("[1/4] Chargement du coeur NeoForge (neoforge-core.json)")
+    modules.append(load_neoforge_core())
 
     # 2. Required mods
-    print("[2/4] Scan fabricmods/required/")
-    required_jars = ftp_list_files(ftp, f"{SERVER_REMOTE_PATH}/fabricmods/required")
+    print("[2/4] Scan forgemods/required/")
+    required_jars = ftp_list_files(ftp, f"{SERVER_REMOTE_PATH}/forgemods/required")
     for name, size, is_dir in sorted(required_jars):
         if is_dir or not name.endswith(".jar"):
             continue
         if name in EXCLUDED_MODS:
             print(f"  [SKIP] {name} (excluded version)")
             continue
-        modules.append(build_mod_entry(ftp, cache, name, "fabricmods/required", size, "fabricmods/required"))
+        modules.append(build_mod_entry(ftp, cache, name, "forgemods/required", size, "forgemods/required"))
 
     # 3. Optional off mods
-    print("[3/4] Scan fabricmods/optionaloff/")
-    opt_off_jars = ftp_list_files(ftp, f"{SERVER_REMOTE_PATH}/fabricmods/optionaloff")
+    print("[3/4] Scan forgemods/optionaloff/")
+    opt_off_jars = ftp_list_files(ftp, f"{SERVER_REMOTE_PATH}/forgemods/optionaloff")
     for name, size, is_dir in sorted(opt_off_jars):
         if is_dir or not name.endswith(".jar"):
             continue
         modules.append(build_mod_entry(
-            ftp, cache, name, "fabricmods/optionaloff", size, "fabricmods/optionaloff",
+            ftp, cache, name, "forgemods/optionaloff", size, "forgemods/optionaloff",
             required={"value": False, "def": False},
         ))
 
     # 4. Optional on mods
-    print("[4/4] Scan fabricmods/optionalon/")
-    opt_on_jars = ftp_list_files(ftp, f"{SERVER_REMOTE_PATH}/fabricmods/optionalon")
+    print("[4/4] Scan forgemods/optionalon/")
+    opt_on_jars = ftp_list_files(ftp, f"{SERVER_REMOTE_PATH}/forgemods/optionalon")
     for name, size, is_dir in sorted(opt_on_jars):
         if is_dir or not name.endswith(".jar"):
             continue
         modules.append(build_mod_entry(
-            ftp, cache, name, "fabricmods/optionalon", size, "fabricmods/optionalon",
+            ftp, cache, name, "forgemods/optionalon", size, "forgemods/optionalon",
             required={"value": False, "def": True},
         ))
 
@@ -412,7 +423,7 @@ def main():
             {
                 "id": SERVER_ID,
                 "name": "Utopia (Minecraft 1.21.1)",
-                "description": "Utopia Running Minecraft 1.21.1 (Fabric v0.19.2)",
+                "description": "Utopia Running Minecraft 1.21.1 (NeoForge 21.1.233)",
                 "icon": "https://apk.nerysia.fr/Logo.png",
                 "version": new_version,
                 "address": "node.hloureiro.fr:45536",

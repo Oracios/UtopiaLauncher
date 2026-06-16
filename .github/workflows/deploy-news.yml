@@ -1,0 +1,47 @@
+name: Deploy News (feed.xml)
+
+# Quand ca se declenche :
+#  1. A chaque push sur master qui modifie docs/feed.xml  -> automatique
+#  2. Manuellement via le bouton "Run workflow" sur GitHub
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'docs/feed.xml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Upload feed.xml vers le FTP (OVH)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Upload feed.xml via FTP
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          if [ -z "$FTP_HOST" ] || [ -z "$FTP_USER" ] || [ -z "$FTP_PASS" ]; then
+            echo "::error::Secrets FTP_HOST / FTP_USERNAME / FTP_PASSWORD manquants."
+            exit 1
+          fi
+
+          # Nettoie le host (au cas ou un prefixe de protocole serait colle dedans)
+          CLEAN_HOST=$(echo "$FTP_HOST" | sed -E 's|^[a-z]+://||I' | sed 's|/$||')
+
+          echo "Upload vers ftp://$CLEAN_HOST/apk/utopia-laucher/feed.xml..."
+          curl --fail --silent --show-error \
+               --connect-timeout 15 --max-time 60 \
+               --user "$FTP_USER:$FTP_PASS" \
+               -T docs/feed.xml \
+               "ftp://$CLEAN_HOST/apk/utopia-laucher/feed.xml"
+          echo "Upload OK"
+
+      - name: Confirm
+        run: echo "feed.xml deploye -> https://apk.nerysia.fr/utopia-laucher/feed.xml"
