@@ -5,8 +5,6 @@
 <p align="center">Rejoins le serveur <strong>Utopia</strong> sans te soucier d'installer Java, NeoForge ou les mods. On s'occupe de tout pour toi.</p>
 
 <p align="center">
-  <a href="https://github.com/Oracios/UtopiaLauncher/releases"><img src="https://img.shields.io/github/v/release/Oracios/UtopiaLauncher?include_prereleases&style=for-the-badge" alt="release"></a>
-  <a href="https://github.com/Oracios/UtopiaLauncher/releases"><img src="https://img.shields.io/github/downloads/Oracios/UtopiaLauncher/total?style=for-the-badge" alt="téléchargements"></a>
   <a href="https://discord.gg/QGcZWFQBgU"><img src="https://img.shields.io/badge/Discord-Rejoindre-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="discord"></a>
 </p>
 
