@@ -1,5 +1,3 @@
-<p align="center"><img src="./app/assets/images/SealCircle.png" width="150px" height="150px" alt="Utopia"></p>
-
 <p align="center"><img src="./app/assets/images/UtopiaTitle.png" width="420px" alt="Utopia Launcher"></p>
 
 <h1 align="center">Utopia Launcher</h1>
