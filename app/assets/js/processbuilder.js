@@ -733,9 +733,12 @@ class ProcessBuilder {
     classpathArg(mods, tempNativePath){
         let cpArgs = []
 
-        if(!mcVersionAtLeast('1.17', this.server.rawServer.minecraftVersion) || this.usingFabricLoader) {
+        if(!mcVersionAtLeast('1.17', this.server.rawServer.minecraftVersion) || this.usingFabricLoader || this.usingNeoForge) {
             // Add the version.jar to the classpath.
             // Must not be added to the classpath for Forge 1.17+.
+            // NeoForge DOES need the vanilla client on the classpath: its
+            // ProductionClientProvider rebuilds the modded client from it,
+            // otherwise the `minecraft` and `neoforge` mods are reported missing.
             const version = this.vanillaManifest.id
             cpArgs.push(path.join(this.commonDir, 'versions', version, version + '.jar'))
         }
