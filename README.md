@@ -130,6 +130,8 @@ Le meilleur moyen de nous contacter, c'est sur Discord :
 
 ## 🙏 Crédits
 
+**Développé par** [Oracios](https://github.com/Oracios) · **Contributeur :** [Lightshadow02](https://github.com/Lightshadow02)
+
 Utopia Launcher est basé sur [Helios Launcher](https://github.com/dscalzi/HeliosLauncher) de **Daniel Scalzi**, sous licence MIT. Un grand merci à lui et à la communauté Helios.
 
 <p align="center">À bientôt en jeu. 🌍</p>

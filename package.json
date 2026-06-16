@@ -8,6 +8,12 @@
     "email": "loureirohugo70@gmail.com",
     "url": "https://github.com/Oracios/"
   },
+  "contributors": [
+    {
+      "name": "Lightshadow02",
+      "url": "https://github.com/Lightshadow02"
+    }
+  ],
   "license": "MIT",
   "homepage": "https://github.com/Oracios/UtopiaLauncher",
   "bugs": {
