@@ -1,4 +1,4 @@
-# Script PowerShell â€” GÃ©nÃ©rer les infos MD5 + taille pour distribution.json
+﻿# Script PowerShell â€” GÃ©nÃ©rer les infos MD5 + taille pour distribution.json
 # Usage: .\get-mod-info.ps1 "C:\chemin\vers\fichier.jar"
 # Ou glisser-dÃ©poser plusieurs fichiers: .\get-mod-info.ps1 *.jar
 

@@ -1,4 +1,4 @@
-# Script PowerShell ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â GÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¨re automatiquement le distribution.json
+﻿# Script PowerShell ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â GÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¨re automatiquement le distribution.json
 # depuis les fichiers prÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©sents sur le serveur (Y:\apk)
 # Usage: .\generate-distribution.ps1
 # Output: docs\distribution.json
@@ -100,7 +100,11 @@ $excludePatterns = @(
     "config\litematica\*",
     "fancymenu_data\*",
     "config\cobblemonintegrations-common-1.toml.bak",
-    "config\sound_physics_remastered\sound_rates.properties"
+    "config\sound_physics_remastered\sound_rates.properties",
+    "waypoints\*",
+    "simplebackups\*",
+    "schematics\*",
+    "dynamic-resource-pack-cache\*"
 )
 
 function Should-Exclude($relativePath) {

@@ -1,4 +1,4 @@
-<#
+﻿<#
   generate-neoforge-core.ps1
 
   Genere le bloc "coeur" NeoForge (module ForgeHosted) pour le distribution.json

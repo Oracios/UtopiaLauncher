@@ -8,3 +8,5 @@
 /IMPORT/
 # Fichiers NeoForge à héberger sur le FTP (générés par generate-neoforge-core.ps1)
 /tools/neoforge-upload/
+# distribution.json généré (servi depuis le FTP, pas besoin dans git)
+/docs/distribution.json
