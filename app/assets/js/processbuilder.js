@@ -902,7 +902,13 @@ class ProcessBuilder {
         for(let mdl of mdls){
             const type = mdl.rawModule.type
             if(type === Type.ForgeHosted || type === Type.Fabric || type === Type.Library){
-                libs[mdl.getVersionlessMavenIdentifier()] = mdl.getPath()
+                // For NeoForge, the universal jar (the ForgeHosted main module) must NOT be
+                // placed on the classpath. FML's neoforge locator loads it as the `neoforge`
+                // mod, but skips it if it's "already located" on the classpath. It is still
+                // downloaded/validated as a module, just kept off the classpath here.
+                if(!(this.usingNeoForge && type === Type.ForgeHosted)){
+                    libs[mdl.getVersionlessMavenIdentifier()] = mdl.getPath()
+                }
                 if(mdl.subModules.length > 0){
                     const res = this._resolveModuleLibraries(mdl)
                     libs = {...libs, ...res}
