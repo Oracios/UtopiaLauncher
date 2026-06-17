@@ -31,8 +31,11 @@ page**, prêt à coller dans `docs/feed.xml`.
 ````text
 Tu génères une actualité pour le launcher du serveur Minecraft "Utopia", au format RSS.
 
-Rends-moi UNIQUEMENT un bloc <item>...</item> (aucune explication, aucun texte autour),
-en respectant EXACTEMENT cette structure :
+Rends-moi UNIQUEMENT un bloc <item>...</item> (aucune explication, aucun texte autour).
+IMPORTANT : n'entoure PAS ta réponse de barrières de code markdown (pas de ```xml, pas de ```).
+Donne le bloc <item> brut, directement.
+
+Respecte EXACTEMENT cette structure :
 
     <item>
       <title>Titre court et accrocheur</title>

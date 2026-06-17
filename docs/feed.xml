@@ -9,7 +9,6 @@
     <description>Actualités du serveur Utopia</description>
     <language>fr-FR</language>
 
- ```xml
 <item>
   <title>🪙 Luxia obtient enfin ses 36 pièces</title>
   <link>https://apk.nerysia.fr</link>
@@ -77,7 +76,6 @@
     </p>
   ]]></content:encoded>
 </item>
-```
 
 
     <!-- ============================================ -->
