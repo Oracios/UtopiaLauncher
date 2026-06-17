@@ -9,30 +9,76 @@
     <description>Actualités du serveur Utopia</description>
     <language>fr-FR</language>
 
-    ```xml
+ ```xml
 <item>
-  <title>Luxia obtient enfin ses 36 pièces</title>
+  <title>🪙 Luxia obtient enfin ses 36 pièces</title>
   <link>https://apk.nerysia.fr</link>
   <pubDate>Wed, 17 Jun 2026 20:00:00 +0200</pubDate>
   <dc:creator>Oracios</dc:creator>
   <slash:comments>0</slash:comments>
   <content:encoded><![CDATA[
-    <h2>🪙 Luxia réclame son salaire</h2>
+    <div style="text-align:center;">
+      <h1>🪙 Luxia obtient enfin ses 36 pièces</h1>
+      <p><em>Une victoire historique pour l'économie d'Utopia.</em></p>
+    </div>
 
-    <p>Après avoir retravaillé les quêtes d'Utopia, rééquilibré les récompenses et empêché l'économie du serveur de s'effondrer pour la 47ème fois cette semaine, Luxia a finalement demandé à être payée.</p>
+    <hr>
 
-    <p>Les archives indiquent qu'elle a passé plusieurs jours à corriger des récompenses, compter des Utopièces et expliquer à Oracios pourquoi distribuer des fortunes pour avoir livré une pomme n'était pas une idée révolutionnaire.</p>
+    <h2>📜 Rapport officiel</h2>
 
-    <p>Face à tant d'efforts, Oracios a accepté de puiser dans son immense fortune personnelle afin de lui verser la somme de <strong>36 pièces</strong>.</p>
+    <p>
+      Après plusieurs jours passés à retravailler les quêtes, équilibrer les récompenses
+      et empêcher l'économie d'Utopia de partir dans une direction que même les mathématiques
+      refusent d'expliquer, <strong>Luxia</strong> a enfin terminé sa mission.
+    </p>
 
-    <p>Les experts économiques d'Utopia parlent déjà d'un événement historique. Certains vont même jusqu'à qualifier ce versement de "plus grosse dépense volontaire d'Oracios depuis la création du serveur".</p>
+    <p>
+      Selon plusieurs témoins, elle aurait corrigé des dizaines de quêtes,
+      recalculé des centaines de récompenses et survécu à plusieurs réunions avec
+      <strong>Oracios</strong> où les mots
+      <em>« ça ira, t'inquiète »</em> ont été prononcés beaucoup trop souvent.
+    </p>
 
-    <p>Luxia aurait déclaré être satisfaite de cette récompense avant de retourner travailler sur les quêtes, pendant qu'Oracios cherchait un moyen de récupérer ses 36 pièces.</p>
+    <h2>💰 Récompense exceptionnelle</h2>
 
-    <p><em>Toute ressemblance avec des faits réels serait purement intentionnelle. 🫡</em></p>
+    <p>
+      Pour remercier Luxia de ses efforts, Oracios a accepté de puiser dans sa fortune
+      personnelle afin de lui verser la somme astronomique de :
+    </p>
+
+    <div style="text-align:center;">
+      <h1>36 PIÈCES</h1>
+    </div>
+
+    <p>
+      Les économistes d'Utopia considèrent déjà cet événement comme le plus gros
+      investissement réalisé par Oracios depuis la création du serveur.
+    </p>
+
+    <h2>📈 Situation actuelle</h2>
+
+    <ul>
+      <li>✅ Quêtes rééquilibrées</li>
+      <li>✅ Économie stabilisée</li>
+      <li>✅ Récompenses corrigées</li>
+      <li>❌ Repos de Luxia</li>
+    </ul>
+
+    <p>
+      Pendant ce temps, Luxia est déjà repartie travailler sur les prochaines quêtes,
+      probablement en essayant de comprendre pourquoi quelqu'un a encore réussi à
+      transformer trois patates et une poule en empire financier.
+    </p>
+
+    <hr>
+
+    <p style="text-align:center;">
+      <em>Merci Luxia pour ton sacrifice au nom de l'économie d'Utopia. 🫡</em>
+    </p>
   ]]></content:encoded>
 </item>
 ```
+
 
     <!-- ============================================ -->
     <!-- ARTICLE 1 — Le plus récent EN PREMIER        -->
