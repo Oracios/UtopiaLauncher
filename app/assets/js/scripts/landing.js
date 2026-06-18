@@ -568,6 +568,12 @@ async function dlAsync(login = true) {
             }
             proc.stdout.removeListener('data', tempListener)
             proc.stderr.removeListener('data', gameErrorListener)
+            // Minecraft vient de démarrer : on ferme le launcher pour qu'il ne reste
+            // pas ouvert derrière le jeu. On ne le fait que si le lancement est "détaché"
+            // (le défaut), sinon fermer le launcher arrêterait aussi le jeu.
+            if(ConfigManager.getLaunchDetached()){
+                remote.getCurrentWindow().close()
+            }
         }
         const start = Date.now()
 
