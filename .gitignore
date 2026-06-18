@@ -10,3 +10,5 @@
 /tools/neoforge-upload/
 # distribution.json généré (servi depuis le FTP, pas besoin dans git)
 /docs/distribution.json
+# Log de l'installeur NeoForge (généré par generate-neoforge-core.ps1)
+/installer.jar.log
