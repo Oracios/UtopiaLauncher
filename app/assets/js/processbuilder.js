@@ -381,6 +381,73 @@ class ProcessBuilder {
 
         fs.writeJsonSync(this.managedModsFile, managed)
         logger.info(`Installed ${managed.length} NeoForge mod(s) into ${modsDir}.`)
+
+        this.pruneNeoForgeModstore()
+    }
+
+    /**
+     * Recursively collect the cached (modstore) paths of every ForgeMod in the
+     * distribution, enabled or not. Used to know which cached jars are still
+     * referenced so the rest can be pruned.
+     *
+     * @param {Array.<Object>} mdls Modules to inspect.
+     * @param {Set.<string>} acc Accumulator of normalized absolute paths.
+     * @returns {Set.<string>} The accumulator.
+     */
+    collectDistributionModPaths(mdls, acc){
+        for(const mdl of mdls){
+            if(mdl.rawModule.type === Type.ForgeMod){
+                acc.add(path.normalize(mdl.getPath()))
+            }
+            if(mdl.subModules.length > 0){
+                this.collectDistributionModPaths(mdl.subModules, acc)
+            }
+        }
+        return acc
+    }
+
+    /**
+     * Remove stale jars from the modstore cache. helios-core never deletes old
+     * mod versions, so each time a mod is updated its previous version lingers
+     * in the cache forever. We delete any cached jar that is no longer referenced
+     * by the current distribution (then clean up the empty folders).
+     */
+    pruneNeoForgeModstore(){
+        const modstoreDir = path.join(this.commonDir, 'modstore')
+        if(!fs.existsSync(modstoreDir)){
+            return
+        }
+
+        const valid = this.collectDistributionModPaths(this.server.modules, new Set())
+        // Safety: if we somehow resolved no mods, don't wipe the whole cache.
+        if(valid.size === 0){
+            return
+        }
+
+        let removed = 0
+        const walk = (dir) => {
+            for(const entry of fs.readdirSync(dir)){
+                const full = path.join(dir, entry)
+                if(fs.statSync(full).isDirectory()){
+                    walk(full)
+                    if(fs.readdirSync(full).length === 0){
+                        fs.removeSync(full)
+                    }
+                } else if(entry.endsWith('.jar') && !valid.has(path.normalize(full))){
+                    fs.removeSync(full)
+                    removed++
+                }
+            }
+        }
+
+        try {
+            walk(modstoreDir)
+            if(removed > 0){
+                logger.info(`Pruned ${removed} stale mod(s) from the modstore cache.`)
+            }
+        } catch(err) {
+            logger.warn('Could not prune the modstore cache.', err)
+        }
     }
 
     _processAutoConnectArg(args){

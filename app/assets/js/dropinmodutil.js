@@ -37,6 +37,20 @@ exports.validateDir = function(dir) {
 exports.scanForDropinMods = function(modsDir, version) {
     const modsDiscovered = []
     if(fs.existsSync(modsDir)){
+        // Utopia / NeoForge : le launcher copie les mods du modpack directement
+        // dans mods/ (NeoForge ne lit que ce dossier). Ces fichiers sont listes
+        // dans .utopia-managed-mods.json ; il ne faut PAS les afficher comme
+        // "drop-in mods", sinon chaque mod du modpack apparait une 2e fois.
+        let managedSet = new Set()
+        try {
+            const managedFile = path.join(path.dirname(modsDir), '.utopia-managed-mods.json')
+            if(fs.existsSync(managedFile)){
+                managedSet = new Set(fs.readJsonSync(managedFile))
+            }
+        } catch(_err) {
+            // Si le manifeste est illisible, on retombe sur l'ancien comportement.
+        }
+
         let modCandidates = fs.readdirSync(modsDir)
         let verCandidates = []
         const versionDir = path.join(modsDir, version)
@@ -44,6 +58,9 @@ exports.scanForDropinMods = function(modsDir, version) {
             verCandidates = fs.readdirSync(versionDir)
         }
         for(let file of modCandidates){
+            if(managedSet.has(file)){
+                continue
+            }
             const match = MOD_REGEX.exec(file)
             if(match != null){
                 modsDiscovered.push({
