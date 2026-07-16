@@ -475,6 +475,63 @@ function computeModpackHash(serv){
     return crypto.createHash('md5').update(parts.join('|')).digest('hex')
 }
 
+// If a download makes no progress at all for this long, assume the connection
+// stalled (e.g. an unreachable Mojang asset CDN) instead of hanging forever.
+// helios-core issues its HTTP requests without a timeout, so this guard is what
+// stops a single unreachable file from freezing the launcher indefinitely.
+const DOWNLOAD_STALL_TIMEOUT = 90000
+
+/**
+ * Run a FullRepair download but reject if it makes no progress for `stallMs`.
+ * Download progress is byte-based, so on a live connection the percentage keeps
+ * moving; a prolonged absence of progress means the socket is dead. A retry is
+ * safe: already-valid files are skipped, so it resumes where it left off.
+ *
+ * @param {(onProgress: (percent: number) => void) => Promise} operation The FullRepair call, given a progress callback.
+ * @param {(percent: number) => void} onProgress The real progress handler.
+ * @param {number} stallMs Max time allowed without any progress.
+ * @returns {Promise} Resolves with the operation result, rejects (err.stalled = true) on stall.
+ */
+function runWithStallGuard(operation, onProgress, stallMs){
+    return new Promise((resolve, reject) => {
+        let settled = false
+        let timer = null
+
+        const arm = () => {
+            if(timer != null){
+                clearTimeout(timer)
+            }
+            timer = setTimeout(() => {
+                if(!settled){
+                    settled = true
+                    const err = new Error(`Download made no progress for ${Math.round(stallMs/1000)}s, assuming it stalled.`)
+                    err.stalled = true
+                    reject(err)
+                }
+            }, stallMs)
+        }
+
+        arm()
+
+        operation(percent => {
+            arm()
+            onProgress(percent)
+        }).then(res => {
+            if(!settled){
+                settled = true
+                clearTimeout(timer)
+                resolve(res)
+            }
+        }).catch(err => {
+            if(!settled){
+                settled = true
+                clearTimeout(timer)
+                reject(err)
+            }
+        })
+    })
+}
+
 /**
  * Check on launcher startup whether the selected server's modpack changed since
  * the last successful download. If it did (or if it was never downloaded), the
@@ -535,9 +592,9 @@ async function autoValidateModpack(){
         if(invalidFileCount > 0){
             setLaunchDetails(Lang.queryJS('landing.updater.downloadingUpdate'))
             setDownloadPercentage(0)
-            await fullRepairModule.download(percent => {
+            await runWithStallGuard(cb => fullRepairModule.download(cb), percent => {
                 setDownloadPercentage(percent)
-            })
+            }, DOWNLOAD_STALL_TIMEOUT)
             setDownloadPercentage(100)
         }
     } catch(err) {
@@ -637,13 +694,18 @@ async function dlAsync(login = true) {
         setLaunchDetails(Lang.queryJS('landing.dlAsync.downloadingFiles'))
         setLaunchPercentage(0)
         try {
-            await fullRepairModule.download(percent => {
+            await runWithStallGuard(cb => fullRepairModule.download(cb), percent => {
                 setDownloadPercentage(percent)
-            })
+            }, DOWNLOAD_STALL_TIMEOUT)
             setDownloadPercentage(100)
         } catch(err) {
-            loggerLaunchSuite.error('Error during file download.')
-            showLaunchFailure(Lang.queryJS('landing.dlAsync.errorDuringFileDownloadTitle'), err.displayable || Lang.queryJS('landing.dlAsync.seeConsoleForDetails'))
+            loggerLaunchSuite.error('Error during file download.', err)
+            if(err.stalled){
+                fullRepairModule.destroyReceiver()
+                showLaunchFailure(Lang.queryJS('landing.dlAsync.downloadStalledTitle'), Lang.queryJS('landing.dlAsync.downloadStalledText'))
+            } else {
+                showLaunchFailure(Lang.queryJS('landing.dlAsync.errorDuringFileDownloadTitle'), err.displayable || Lang.queryJS('landing.dlAsync.seeConsoleForDetails'))
+            }
             return
         }
     } else {
