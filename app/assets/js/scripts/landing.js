@@ -2,6 +2,7 @@
  * Script for landing.ejs
  */
 // Requirements
+const crypto                  = require('crypto')
 const { URL }                 = require('url')
 const {
     MojangRestAPI,
@@ -445,6 +446,123 @@ const GAME_JOINED_REGEX = /\[.+\]: Sound engine started/
 const GAME_LAUNCH_REGEX = /^\[.+\]: (?:MinecraftForge .+ Initialized|ModLauncher .+ starting: .+|Loading Minecraft .+ with Fabric Loader .+)$/
 const MIN_LINGER = 5000
 
+/**
+ * Compute a stable hash representing the current state of a server's files.
+ * It is built from the versionless maven id and MD5 of every artifact declared
+ * by the server (mods, libraries, files...), sorted so the result is
+ * deterministic. Any change to the modpack (added/removed/updated file) changes
+ * this hash, which lets us cheaply detect that an update is available without
+ * rescanning every file on disk.
+ *
+ * @param {Object} serv The HeliosServer to hash.
+ * @returns {string} An md5 hex digest of the server's file state.
+ */
+function computeModpackHash(serv){
+    const parts = []
+    const walk = (mdls) => {
+        for(const mdl of mdls){
+            const artifact = mdl.rawModule.artifact
+            if(artifact != null){
+                parts.push(`${mdl.rawModule.id}@${artifact.MD5 ?? artifact.size ?? ''}`)
+            }
+            if(mdl.subModules != null && mdl.subModules.length > 0){
+                walk(mdl.subModules)
+            }
+        }
+    }
+    walk(serv.modules)
+    parts.sort()
+    return crypto.createHash('md5').update(parts.join('|')).digest('hex')
+}
+
+/**
+ * Check on launcher startup whether the selected server's modpack changed since
+ * the last successful download. If it did (or if it was never downloaded), the
+ * updated files are downloaded automatically with a progress bar before the user
+ * presses PLAY. If nothing changed, this returns almost instantly.
+ */
+async function autoValidateModpack(){
+
+    const loggerUpdater = LoggerUtil.getLogger('ModpackUpdater')
+
+    let serv
+    try {
+        const distro = await DistroAPI.getDistribution()
+        serv = distro.getServerById(ConfigManager.getSelectedServer())
+    } catch(err) {
+        loggerUpdater.error('Unable to load distribution for modpack update check.', err)
+        return
+    }
+
+    if(serv == null){
+        return
+    }
+
+    const currentHash = computeModpackHash(serv)
+    const storedHash = ConfigManager.getModpackHash(serv.rawServer.id)
+
+    if(storedHash === currentHash){
+        loggerUpdater.info('Modpack is up to date.')
+        return
+    }
+
+    loggerUpdater.info('Modpack change detected, validating files..')
+    setLaunchDetails(Lang.queryJS('landing.updater.checking'))
+    toggleLaunchArea(true)
+    setLaunchEnabled(false)
+    setLaunchPercentage(0)
+
+    const fullRepairModule = new FullRepair(
+        ConfigManager.getCommonDirectory(),
+        ConfigManager.getInstanceDirectory(),
+        ConfigManager.getLauncherDirectory(),
+        serv.rawServer.id,
+        DistroAPI.isDevMode()
+    )
+
+    fullRepairModule.spawnReceiver()
+
+    fullRepairModule.childProcess.on('error', (err) => {
+        loggerUpdater.error('Error during modpack update.', err)
+    })
+
+    try {
+        const invalidFileCount = await fullRepairModule.verifyFiles(percent => {
+            setLaunchPercentage(percent)
+        })
+        setLaunchPercentage(100)
+
+        if(invalidFileCount > 0){
+            setLaunchDetails(Lang.queryJS('landing.updater.downloadingUpdate'))
+            setDownloadPercentage(0)
+            await fullRepairModule.download(percent => {
+                setDownloadPercentage(percent)
+            })
+            setDownloadPercentage(100)
+        }
+    } catch(err) {
+        loggerUpdater.error('Error during modpack update.', err)
+        fullRepairModule.destroyReceiver()
+        remote.getCurrentWindow().setProgressBar(-1)
+        toggleLaunchArea(false)
+        setLaunchEnabled(true)
+        showLaunchFailure(Lang.queryJS('landing.updater.errorTitle'), Lang.queryJS('landing.updater.errorText'))
+        return
+    }
+
+    remote.getCurrentWindow().setProgressBar(-1)
+    fullRepairModule.destroyReceiver()
+
+    // Only record the hash once the download fully succeeded, so an interrupted
+    // update is retried on the next startup.
+    ConfigManager.setModpackHash(serv.rawServer.id, currentHash)
+    ConfigManager.save()
+
+    toggleLaunchArea(false)
+    setLaunchEnabled(true)
+    loggerUpdater.info('Modpack updated successfully.')
+}
+
 async function dlAsync(login = true) {
 
     // Login parameter is temporary for debug purposes. Allows testing the validation/downloads without
@@ -536,6 +654,11 @@ async function dlAsync(login = true) {
     remote.getCurrentWindow().setProgressBar(-1)
 
     fullRepairModule.destroyReceiver()
+
+    // Record the modpack state so the startup auto-update does not re-scan
+    // everything on the next launch.
+    ConfigManager.setModpackHash(serv.rawServer.id, computeModpackHash(serv))
+    ConfigManager.save()
 
     setLaunchDetails(Lang.queryJS('landing.dlAsync.preparingToLaunch'))
 

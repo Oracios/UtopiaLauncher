@@ -99,7 +99,8 @@ const DEFAULT_CONFIG = {
     selectedAccount: null,
     authenticationDatabase: {},
     modConfigurations: [],
-    javaConfig: {}
+    javaConfig: {},
+    modpackHashes: {}
 }
 
 let config = null
@@ -484,6 +485,32 @@ exports.getModConfiguration = function(serverid){
         }
     }
     return null
+}
+
+/**
+ * Get the last applied modpack hash for a specific server. This is used to
+ * detect whether the modpack has changed since the last successful download,
+ * so the launcher can auto-update the mods on startup without rescanning every
+ * file each time.
+ *
+ * @param {string} serverid The id of the server.
+ * @returns {string | null} The stored modpack hash, or null if none is stored.
+ */
+exports.getModpackHash = function(serverid){
+    return config.modpackHashes != null ? (config.modpackHashes[serverid] ?? null) : null
+}
+
+/**
+ * Store the modpack hash for a specific server after a successful download.
+ *
+ * @param {string} serverid The id of the server.
+ * @param {string} hash The hash representing the current modpack state.
+ */
+exports.setModpackHash = function(serverid, hash){
+    if(config.modpackHashes == null){
+        config.modpackHashes = {}
+    }
+    config.modpackHashes[serverid] = hash
 }
 
 /**

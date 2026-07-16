@@ -87,6 +87,8 @@ async function showMainUI(data){
             if(isLoggedIn){
                 currentView = VIEWS.landing
                 $(VIEWS.landing).fadeIn(1000)
+                // Auto-detect and download modpack updates on startup.
+                autoValidateModpack()
             } else {
                 loginOptionsCancelEnabled(false)
                 loginOptionsViewOnLoginSuccess = VIEWS.landing

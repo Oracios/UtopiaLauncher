@@ -207,6 +207,12 @@ launchWrapperNotDownloaded = "The main file, LaunchWrapper, failed to download p
 doneEnjoyServer = "Done. Enjoy the server!"
 checkConsoleForDetails = "Please check the console (CTRL + Shift + i) for more details."
 
+[js.landing.updater]
+checking = "Checking for modpack updates.."
+downloadingUpdate = "Downloading modpack update.."
+errorTitle = "Modpack Update Failed"
+errorText = "The modpack update could not be completed. You can still press PLAY to retry. See console (CTRL + Shift + i) for details."
+
 [js.landing.news]
 checking = "Checking for News"
 
