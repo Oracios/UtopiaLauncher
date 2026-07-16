@@ -180,7 +180,7 @@ javaDownloadPrepare = "Preparing Java Download.."
 javaDownloadFailureTitle = "Error During Java Download"
 javaDownloadFailureText = "See console (CTRL + Shift + i) for more details."
 javaRequired = "Java is Required<br>to Launch"
-javaRequiredMessage = 'A valid x64 installation of Java {major} is required to launch.<br><br>Please refer to our <a href="https://github.com/dscalzi/HeliosLauncher/wiki/Java-Management#manually-installing-a-valid-version-of-java">Java Management Guide</a> for instructions on how to manually install Java.'
+javaRequiredMessage = 'A valid x64 installation of Java {major} is required to launch.<br><br>You can install it from <a href="https://adoptium.net/">adoptium.net</a> (choose the 64-bit version), or ask for help on our Discord.'
 javaRequiredDismiss = "I Understand"
 javaRequiredCancel = "Go Back"
 
@@ -205,7 +205,7 @@ downloadStalledTitle = "Download Stalled"
 downloadStalledText = "A file is taking too long to download. This is usually a temporary issue with your connection or Mojang's servers. Press PLAY to try again — the download resumes where it left off."
 preparingToLaunch = "Preparing to launch.."
 launchingGame = "Launching game.."
-launchWrapperNotDownloaded = "The main file, LaunchWrapper, failed to download properly. As a result, the game cannot launch.<br><br>To fix this issue, temporarily turn off your antivirus software and launch the game again.<br><br>If you have time, please <a href=\"https://github.com/dscalzi/HeliosLauncher/issues\">submit an issue</a> and let us know what antivirus software you use. We'll contact them and try to straighten things out."
+launchWrapperNotDownloaded = "The main file, LaunchWrapper, failed to download properly. As a result, the game cannot launch.<br><br>To fix this issue, temporarily turn off your antivirus software and launch the game again.<br><br>If the problem persists, please <a href=\"https://github.com/Oracios/UtopiaLauncher/issues\">report it</a> or ask for help on our Discord, and let us know what antivirus software you use."
 doneEnjoyServer = "Done. Enjoy the server!"
 checkConsoleForDetails = "Please check the console (CTRL + Shift + i) for more details."
 
@@ -230,12 +230,7 @@ dismiss = "Dismiss"
 executables = "Executables"
 allFiles = "All Files"
 
-[js.settings.mstfLogin]
-errorTitle = "Something Went Wrong"
-errorMessage = "Microsoft authentication failed. Please try again."
-okButton = "OK"
-
-[js.settings.mstfLogout]
+[js.settings.msftLogout]
 errorTitle = "Something Went Wrong"
 errorMessage = "Microsoft logout failed. Please try again."
 okButton = "OK"

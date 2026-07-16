@@ -363,6 +363,11 @@ class ProcessBuilder {
                 logger.warn('Could not read managed mods manifest, ignoring.', err)
             }
         }
+        // A corrupt manifest could be valid JSON but not an array (which would
+        // make the loop below throw). Fall back to an empty list in that case.
+        if(!Array.isArray(previouslyManaged)) {
+            previouslyManaged = []
+        }
         for(const fileName of previouslyManaged) {
             const oldPath = path.join(modsDir, fileName)
             if(fs.existsSync(oldPath)) {

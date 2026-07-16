@@ -10,12 +10,18 @@ exports.loadLanguage = function(id){
 }
 
 exports.query = function(id, placeHolders){
-    let query = id.split('.')
+    const query = id.split('.')
     let res = lang
-    for(let q of query){
+    for(const q of query){
+        // Guard against a missing/mistyped key. Without this, res[q] on an
+        // undefined res throws, which can bubble up and leave the UI stuck on
+        // a blank screen. Return the id so the problem is visible, not fatal.
+        if(res == null || typeof res !== 'object'){
+            return id
+        }
         res = res[q]
     }
-    let text = res === lang ? '' : res
+    let text = typeof res === 'string' ? res : ''
     if (placeHolders) {
         Object.entries(placeHolders).forEach(([key, value]) => {
             text = text.replace(`{${key}}`, value)
