@@ -12,3 +12,6 @@
 /docs/distribution.json
 # Log de l'installeur NeoForge (généré par generate-neoforge-core.ps1)
 /installer.jar.log
+# Cache de bytecode Python (généré en lançant les scripts tools/)
+__pycache__/
+*.pyc
