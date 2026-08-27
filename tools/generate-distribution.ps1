@@ -71,15 +71,26 @@ function Get-NextVersion($current, $bumpType) {
     return "$major.$minor.$patch"
 }
 
+# Lit la version ACTUELLE depuis la distribution LIVE sur le FTP (Y:), qui est
+# la source de verite. On retombe sur la copie locale docs/ puis sur 1.0.0.
+# (Sans ca, si docs/distribution.json est absent en local, un bump repartirait
+# toujours de 1.0.0 et la version reculerait.)
+$liveDistro = "Y:\apk\utopia-laucher\distribution.json"
 $currentVersion = "1.0.0"
-if (Test-Path $outputFile) {
+$versionSource = $null
+if (Test-Path $liveDistro) {
+    $versionSource = $liveDistro
+} elseif (Test-Path $outputFile) {
+    $versionSource = $outputFile
+}
+if ($versionSource) {
     try {
-        $existing = Get-Content $outputFile -Raw | ConvertFrom-Json
+        $existing = Get-Content $versionSource -Raw | ConvertFrom-Json
         if ($existing.servers -and $existing.servers[0].version) {
             $currentVersion = $existing.servers[0].version
         }
     } catch {
-        Write-Host "  [WARN] Impossible de parser distribution.json existant, defaut = 1.0.0" -ForegroundColor Yellow
+        Write-Host "  [WARN] Impossible de parser $versionSource, defaut = 1.0.0" -ForegroundColor Yellow
     }
 }
 $newVersion = Get-NextVersion $currentVersion $Bump
@@ -115,9 +126,20 @@ function Should-Exclude($relativePath) {
 }
 
 function Get-MD5($path) {
-    $hash = Get-FileHash $path -Algorithm MD5 -ErrorAction SilentlyContinue
-    if ($hash) { return $hash.Hash.ToLower() }
-    return "00000000000000000000000000000000"
+    # Un fichier verrouille (sync FTP en cours) faisait renvoyer un MD5 bidon
+    # "000...0" en silence -> tous les joueurs echouaient la validation de ce
+    # fichier. On echoue desormais bruyamment plutot que de publier un faux hash.
+    try {
+        return (Get-FileHash $path -Algorithm MD5 -ErrorAction Stop).Hash.ToLower()
+    } catch {
+        Write-Host ""
+        Write-Host "  ERREUR : impossible de calculer le MD5 de :" -ForegroundColor Red
+        Write-Host "    $path" -ForegroundColor Yellow
+        Write-Host "    ($($_.Exception.Message))" -ForegroundColor Yellow
+        Write-Host "  Fichier verrouille ? (sync FTP en cours ?)" -ForegroundColor Yellow
+        Write-Host "  Generation ARRETEE pour ne pas publier un hash invalide." -ForegroundColor Red
+        exit 1
+    }
 }
 
 function New-ModEntry($file, $id, $name, $type, $url, $required = $null) {
