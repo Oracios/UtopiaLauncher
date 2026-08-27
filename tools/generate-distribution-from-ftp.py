@@ -30,14 +30,11 @@ from urllib.parse import quote
 # Configuration (alignee avec generate-distribution.ps1)
 # ----------------------------------------------------------------
 # ============================================================
-#  !! ATTENTION : ce script .py est ENCORE EN FABRIC, PAS adapte NeoForge.
-#  Pour Utopia (NeoForge), utilise plutot : generate-distribution.ps1
-#  ont ete remplacees par des PLACEHOLDERS Utopia. A confirmer :
-#    - Si tu veux la variante FTP en NeoForge, il faut la reecrire
-#    - Domaine apk.nerysia.fr et chemins FTP /apk/utopia-laucher/
-#    - Adresse du serveur ("address" plus bas : encore
-#      node.hloureiro.fr:45536 = valeur Nerysia !)
-#    - Versions / hash des libs Fabric (encore ceux de Nerysia)
+#  Script de PRODUCTION pour Utopia (NeoForge 1.21.1).
+#  Lance par le workflow GitHub "Update Modpack"
+#  (.github/workflows/update-modpack.yml) : scanne le FTP, regenere
+#  distribution.json (en injectant neoforge-core.json) et le re-uploade.
+#  La version live est lue depuis le FTP (voir fetch_remote_distribution).
 # ============================================================
 SERVER_ID = "Utopia-1.21.1"
 SERVER_REMOTE_PATH = f"/apk/utopia-laucher/servers/{SERVER_ID}"
@@ -62,49 +59,6 @@ EXCLUDED_MODS = {
     "Cobblemon-fabric-1.6.1+1.21.1.jar",
     "fabric-api-0.116.7+1.21.1.jar",
 }
-
-# ----------------------------------------------------------------
-# Fabric Core (statique, change uniquement si on bump Fabric/MC)
-# ----------------------------------------------------------------
-FABRIC_REPO_URL = "https://apk.nerysia.fr/utopia-laucher/repo"
-
-FABRIC_CORE_BLOCK = {
-    "id": "net.fabricmc:fabric-loader:0.19.2",
-    "name": "Fabric (fabric-loader)",
-    "type": "Fabric",
-    "artifact": {
-        "size": 1968930,
-        "MD5": "d692407a67129e913b4210218edebb20",
-        "url": f"{FABRIC_REPO_URL}/lib/net/fabricmc/fabric-loader/0.19.2/fabric-loader-0.19.2.jar",
-    },
-    "subModules": [
-        {"id": "1.21.1-fabric-0.19.2", "name": "Fabric (version.json)", "type": "VersionManifest",
-         "artifact": {"size": 2847, "MD5": "d2dd97583145d543897681ba0caa87ce",
-                      "url": f"{FABRIC_REPO_URL}/versions/1.21.1-fabric-0.19.2/1.21.1-fabric-0.19.2.json"}},
-        {"id": "org.ow2.asm:asm:9.9", "name": "Fabric (asm)", "type": "Library",
-         "artifact": {"size": 126122, "MD5": "6d1dd0482c03a6dc1807d9d004456021",
-                      "url": f"{FABRIC_REPO_URL}/lib/org/ow2/asm/asm/9.9/asm-9.9.jar"}},
-        {"id": "org.ow2.asm:asm-analysis:9.9", "name": "Fabric (asm-analysis)", "type": "Library",
-         "artifact": {"size": 35149, "MD5": "f07383cfbd50f097558341a03b8871e1",
-                      "url": f"{FABRIC_REPO_URL}/lib/org/ow2/asm/asm-analysis/9.9/asm-analysis-9.9.jar"}},
-        {"id": "org.ow2.asm:asm-commons:9.9", "name": "Fabric (asm-commons)", "type": "Library",
-         "artifact": {"size": 74348, "MD5": "8103b3de8f48fb4c7f97efdaa46ce809",
-                      "url": f"{FABRIC_REPO_URL}/lib/org/ow2/asm/asm-commons/9.9/asm-commons-9.9.jar"}},
-        {"id": "org.ow2.asm:asm-tree:9.9", "name": "Fabric (asm-tree)", "type": "Library",
-         "artifact": {"size": 51947, "MD5": "912eeaba1a63d574ffc66c651c7c6725",
-                      "url": f"{FABRIC_REPO_URL}/lib/org/ow2/asm/asm-tree/9.9/asm-tree-9.9.jar"}},
-        {"id": "org.ow2.asm:asm-util:9.9", "name": "Fabric (asm-util)", "type": "Library",
-         "artifact": {"size": 94565, "MD5": "ef5e90e736cd09bc407c1d46a3faba0f",
-                      "url": f"{FABRIC_REPO_URL}/lib/org/ow2/asm/asm-util/9.9/asm-util-9.9.jar"}},
-        {"id": "net.fabricmc:sponge-mixin:0.17.2+mixin.0.8.7", "name": "Fabric (sponge-mixin)", "type": "Library",
-         "artifact": {"size": 1540039, "MD5": "4b6b96074976cc7aa096b9e569ca623e",
-                      "url": f"{FABRIC_REPO_URL}/lib/net/fabricmc/sponge-mixin/0.17.2+mixin.0.8.7/sponge-mixin-0.17.2+mixin.0.8.7.jar"}},
-        {"id": "net.fabricmc:intermediary:1.21.1", "name": "Fabric (intermediary)", "type": "Library",
-         "artifact": {"size": 657725, "MD5": "850be48a3406b9efdf8e64b1c2db97f8",
-                      "url": f"{FABRIC_REPO_URL}/lib/net/fabricmc/intermediary/1.21.1/intermediary-1.21.1.jar"}},
-    ],
-}
-
 
 # ----------------------------------------------------------------
 # Helpers
@@ -168,6 +122,35 @@ def get_current_version() -> str:
         return data["servers"][0].get("version", "1.0.0")
     except Exception:
         return "1.0.0"
+
+
+def fetch_remote_distribution(ftp: ftplib.FTP) -> bool:
+    """Pull the live distribution.json from the FTP into OUTPUT_FILE.
+
+    OUTPUT_FILE (docs/distribution.json) is git-ignored, so on a fresh CI
+    checkout it is absent and get_current_version()/load_existing_cache() would
+    always fall back to 1.0.0 with an empty cache (re-downloading every mod).
+    Fetching the published copy first makes the version bump increment correctly
+    and the MD5 cache actually work. Returns True on success.
+    """
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    tmp_fd, tmp_name = tempfile.mkstemp(suffix=".json")
+    try:
+        ftp.voidcmd("TYPE I")
+        with os.fdopen(tmp_fd, "wb") as f:
+            ftp.retrbinary(f"RETR {DIST_REMOTE}", f.write)
+        os.replace(tmp_name, OUTPUT_FILE)
+        print(f"  Distribution live recuperee depuis le FTP ({DIST_REMOTE})")
+        return True
+    except ftplib.error_perm as e:
+        # No remote distribution yet (first ever generation): leave OUTPUT_FILE
+        # absent so the 1.0.0 fallback applies.
+        try:
+            os.remove(tmp_name)
+        except OSError:
+            pass
+        print(f"  [INFO] Pas de distribution.json distant ({e}) - premiere generation")
+        return False
 
 
 # ----------------------------------------------------------------
@@ -346,7 +329,13 @@ def main():
     )
     args = parser.parse_args()
 
-    # Read current version
+    # Connect FTP first, then pull the live distribution.json so the version and
+    # the MD5 cache reflect what is actually published (the local copy is
+    # git-ignored and absent in CI).
+    ftp = ftp_connect()
+    fetch_remote_distribution(ftp)
+
+    # Read current version (from the freshly pulled live distribution)
     current_version = get_current_version()
     new_version = bump_version(current_version, args.bump)
     if args.bump == "none":
@@ -354,13 +343,10 @@ def main():
     else:
         print(f"Version serveur : {current_version} -> {new_version} (bump {args.bump})")
 
-    # Cache existing MD5s by URL
+    # Cache existing MD5s by URL (from the live distribution)
     cache = load_existing_cache()
     print(f"Cache MD5 charge : {len(cache)} entries")
     print()
-
-    # Connect FTP
-    ftp = ftp_connect()
 
     modules = []
 
