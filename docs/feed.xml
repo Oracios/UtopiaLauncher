@@ -4,6 +4,39 @@
   xmlns:dc="http://purl.org/dc/elements/1.1/"
   xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
   <channel>
+
+    <item>
+      <title>Nouvelle fonctionnalité — Les parcelles</title>
+      <link>https://apk.nerysia.fr</link>
+      <pubDate>Mon, 06 Jul 2026 10:32:53 +0200</pubDate>
+      <dc:creator>Oracios</dc:creator>
+      <slash:comments>0</slash:comments>
+      <content:encoded><![CDATA[
+        <h2>🌴 Nouvelle fonctionnalité implémentée : les parcelles !</h2>
+        <p>Le système de parcelles vient d’être intégré à Utopia. Les joueurs peuvent désormais devenir propriétaires de leur terrain sur l’île !</p>
+
+        <h3>🏡 Deux types de parcelles</h3>
+        <ul>
+          <li>Les <strong>parcelles d’habitation</strong> permettent de construire votre maison</li>
+          <li>Les <strong>parcelles commerciales</strong> permettent d’ouvrir une boutique après validation du maire</li>
+        </ul>
+
+        <h3>📜 Comment acheter une parcelle ?</h3>
+        <ul>
+          <li>Rendez-vous à la <strong>mairie</strong> pour obtenir votre <strong>acte de propriété</strong></li>
+          <li>Une <strong>licence commerciale</strong> est également nécessaire pour ouvrir un commerce</li>
+          <li>Ouvrez ensuite le <code>/menu</code>, cliquez sur l’<strong>icône du chat</strong>, puis sur <strong>Boutique</strong></li>
+        </ul>
+
+        <h3>💰 Prix des terrains</h3>
+        <ul>
+          <li>Le prix dépend notamment de la <strong>taille</strong>, de l’<strong>emplacement</strong> et des particularités de la parcelle</li>
+        </ul>
+
+        <p><em>Choisissez soigneusement votre emplacement et laissez votre empreinte sur Utopia ! ✨</em></p>
+      ]]></content:encoded>
+    </item>
+    
     <title>Utopia News</title>
     <link>https://apk.nerysia.fr</link>
     <description>Actualités du serveur Utopia</description>
