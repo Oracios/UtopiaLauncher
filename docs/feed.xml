@@ -3,8 +3,16 @@
   xmlns:content="http://purl.org/rss/1.0/modules/content/"
   xmlns:dc="http://purl.org/dc/elements/1.1/"
   xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
-  <channel>
 
+  <channel>
+    <title>Utopia News</title>
+    <link>https://apk.nerysia.fr</link>
+    <description>Actualités du serveur Utopia</description>
+    <language>fr-FR</language>
+
+    <!-- ============================================ -->
+    <!-- ARTICLE 1 — Le plus récent EN PREMIER        -->
+    <!-- ============================================ -->
     <item>
       <title>Nouvelle fonctionnalité — Les parcelles</title>
       <link>https://apk.nerysia.fr</link>
@@ -36,65 +44,63 @@
         <p><em>Choisissez soigneusement votre emplacement et laissez votre empreinte sur Utopia ! ✨</em></p>
       ]]></content:encoded>
     </item>
-    
-    <title>Utopia News</title>
-    <link>https://apk.nerysia.fr</link>
-    <description>Actualités du serveur Utopia</description>
-    <language>fr-FR</language>
 
-<item>
-  <title>🪙 Luxia obtient enfin ses 36 pièces</title>
-  <link>https://apk.nerysia.fr</link>
-  <pubDate>Wed, 17 Jun 2026 20:00:00 +0200</pubDate>
-  <dc:creator>Oracios</dc:creator>
-  <slash:comments>0</slash:comments>
-  <content:encoded><![CDATA[
-    <div style="text-align:center;">
-      <h1>🪙 Luxia obtient enfin ses 36 pièces</h1>
-      <p><em>Une victoire historique pour l'économie d'Utopia.</em></p>
-    </div>
+    <!-- ============================================ -->
+    <!-- ARTICLE 2 — Économie et quêtes               -->
+    <!-- ============================================ -->
+    <item>
+      <title>🪙 Luxia obtient enfin ses 36 pièces</title>
+      <link>https://apk.nerysia.fr</link>
+      <pubDate>Wed, 17 Jun 2026 20:00:00 +0200</pubDate>
+      <dc:creator>Oracios</dc:creator>
+      <slash:comments>0</slash:comments>
+      <content:encoded><![CDATA[
+        <div style="text-align:center;">
+          <h1>🪙 Luxia obtient enfin ses 36 pièces</h1>
+          <p><em>Une victoire historique pour l'économie d'Utopia.</em></p>
+        </div>
 
-    <hr>
+        <hr>
 
-<h3>💰 Économie sous contrôle</h3>
-<ul>
-  <li><strong>Luxia</strong> a rééquilibré les récompenses des quêtes</li>
-  <li>Les <strong>Utopièces</strong> ont été surveillées de très près</li>
-  <li>Plusieurs abus économiques ont été calmement regardés, puis violemment corrigés</li>
-</ul>
+        <h3>💰 Économie sous contrôle</h3>
+        <ul>
+          <li><strong>Luxia</strong> a rééquilibré les récompenses des quêtes</li>
+          <li>Les <strong>Utopièces</strong> ont été surveillées de très près</li>
+          <li>Plusieurs abus économiques ont été calmement regardés, puis violemment corrigés</li>
+        </ul>
 
-<h3>📜 Quêtes retravaillées</h3>
-<ul>
-  <li>Des dizaines de quêtes ont été ajustées</li>
-  <li>Les récompenses trop généreuses ont été réduites</li>
-  <li>Les quêtes absurdes ont été conservées, mais avec un meilleur taux de souffrance</li>
-</ul>
+        <h3>📜 Quêtes retravaillées</h3>
+        <ul>
+          <li>Des dizaines de quêtes ont été ajustées</li>
+          <li>Les récompenses trop généreuses ont été réduites</li>
+          <li>Les quêtes absurdes ont été conservées, mais avec un meilleur taux de souffrance</li>
+        </ul>
 
-<h3>🪙 Récompense historique</h3>
-<ul>
-  <li><strong>Oracios</strong> a puisé dans sa fortune personnelle</li>
-  <li><strong>Luxia</strong> a reçu la somme astronomique de <strong>36 pièces</strong></li>
-  <li>Les économistes d'Utopia parlent déjà du plus gros investissement jamais réalisé par Oracios</li>
-</ul>
+        <h3>🪙 Récompense historique</h3>
+        <ul>
+          <li><strong>Oracios</strong> a puisé dans sa fortune personnelle</li>
+          <li><strong>Luxia</strong> a reçu la somme astronomique de <strong>36 pièces</strong></li>
+          <li>Les économistes d'Utopia parlent déjà du plus gros investissement jamais réalisé par Oracios</li>
+        </ul>
 
-<h3>🌴 Situation actuelle</h3>
-<ul>
-  <li>L'économie est stable pour environ cinq minutes</li>
-  <li>Luxia est déjà repartie travailler sur les prochaines quêtes</li>
-  <li>Quelqu'un a encore essayé de transformer trois patates et une poule en empire financier</li>
-</ul>
+        <h3>🌴 Situation actuelle</h3>
+        <ul>
+          <li>L'économie est stable pour environ cinq minutes</li>
+          <li>Luxia est déjà repartie travailler sur les prochaines quêtes</li>
+          <li>Quelqu'un a encore essayé de transformer trois patates et une poule en empire financier</li>
+        </ul>
 
-<p><em>Merci Luxia pour ton sacrifice au nom de l'économie d'Utopia. 🫡</em></p>
+        <p><em>Merci Luxia pour ton sacrifice au nom de l'économie d'Utopia. 🫡</em></p>
       ]]></content:encoded>
     </item>
 
     <!-- ============================================ -->
-    <!-- ARTICLE 1 — Le plus récent EN PREMIER        -->
+    <!-- ARTICLE 3 — Présentation d’Utopia 3.5        -->
     <!-- ============================================ -->
     <item>
       <title>Bienvenue sur Utopia 3.5 !</title>
       <link>https://apk.nerysia.fr</link>
-      <pubDate>Mon, 16 Jun 2026 20:00:00 +0200</pubDate>
+      <pubDate>Tue, 16 Jun 2026 20:00:00 +0200</pubDate>
       <dc:creator>Oracios</dc:creator>
       <slash:comments>0</slash:comments>
       <content:encoded><![CDATA[
@@ -121,12 +127,12 @@
     </item>
 
     <!-- ============================================ -->
-    <!-- ARTICLE 2 — Exemple (tu peux le supprimer)   -->
+    <!-- ARTICLE 4 — Discord                          -->
     <!-- ============================================ -->
     <item>
       <title>Rejoins le Discord !</title>
       <link>https://discord.gg/QGcZWFQBgU</link>
-      <pubDate>Mon, 16 Jun 2026 18:00:00 +0200</pubDate>
+      <pubDate>Tue, 16 Jun 2026 18:00:00 +0200</pubDate>
       <dc:creator>Oracios</dc:creator>
       <slash:comments>0</slash:comments>
       <content:encoded><![CDATA[
