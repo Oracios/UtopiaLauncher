@@ -69,10 +69,16 @@ Récupère la dernière version depuis les [GitHub Releases](https://github.com/
 | Plateforme | Fichier |
 | ---------- | ------- |
 | Windows x64 | `Utopia-Launcher-setup-VERSION.exe` |
+| macOS Apple Silicon (M1→M4) | `Utopia-Launcher-setup-VERSION-arm64.dmg` |
+| macOS Intel | `Utopia-Launcher-setup-VERSION-x64.dmg` |
 | Linux x64   | `Utopia-Launcher-setup-VERSION.AppImage` |
 
 > [!NOTE]
 > Le serveur Utopia tourne en **Minecraft 1.21.1 — NeoForge**.
+
+> [!IMPORTANT]
+> **Sur Mac**, l'application n'est pas signée auprès d'Apple : macOS la bloque au premier lancement.
+> Suis le guide [Installer le launcher sur Mac](docs/INSTALLATION-MAC.md) — l'autorisation ne se fait qu'une seule fois.
 
 ---
 
