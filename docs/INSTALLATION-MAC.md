@@ -77,7 +77,7 @@ Sur Windows, le launcher se met à jour tout seul. **Sur Mac, comme l'applicatio
 Quand une nouvelle version du launcher sort, voici ce qui se passe :
 
 1. Une **pastille de notification** apparaît sur le logo Utopia, en haut à gauche du launcher
-2. Clique dessus : le launcher t'emmène dans **Réglages → Mises à jour**
+2. Clique dessus : le launcher t'emmène dans l'onglet **Updates** (l'interface est en anglais)
 3. Clique sur le bouton **Download from GitHub** : le téléchargement du nouveau `.dmg` s'ouvre dans ton navigateur
 4. Ferme le launcher, ouvre le `.dmg` et glisse-le dans **Applications** en remplaçant l'ancien
 5. Relance le launcher
@@ -118,7 +118,7 @@ Si le blocage persiste, c'est souvent une coupure temporaire des serveurs de Moj
 
 Demande de l'aide sur le **Discord d'Utopia**, en précisant :
 - ton modèle de Mac (Apple Silicon ou Intel) et ta version de macOS,
-- la version du launcher (visible dans les Réglages du launcher),
+- la version du launcher (réglages ⚙️ → onglet **About**),
 - une capture d'écran du message d'erreur.
 
 ---

@@ -66,19 +66,20 @@ Enfin, plusieurs **créateurs de contenu** participeront à l'aventure. Gardez d
 
 Récupère la dernière version depuis les [GitHub Releases](https://github.com/Oracios/UtopiaLauncher/releases).
 
-| Plateforme | Fichier |
-| ---------- | ------- |
-| Windows x64 | `Utopia-Launcher-setup-VERSION.exe` |
-| macOS Apple Silicon (M1→M4) | `Utopia-Launcher-setup-VERSION-arm64.dmg` |
-| macOS Intel | `Utopia-Launcher-setup-VERSION-x64.dmg` |
-| Linux x64   | `Utopia-Launcher-setup-VERSION.AppImage` |
+| Plateforme | Fichier | Guide d'installation |
+| ---------- | ------- | -------------------- |
+| Windows x64 | `Utopia-Launcher-setup-VERSION.exe` | [Guide Windows](docs/INSTALLATION-WINDOWS.md) |
+| macOS Apple Silicon (M1→M4) | `Utopia-Launcher-setup-VERSION-arm64.dmg` | [Guide macOS](docs/INSTALLATION-MAC.md) |
+| macOS Intel | `Utopia-Launcher-setup-VERSION-x64.dmg` | [Guide macOS](docs/INSTALLATION-MAC.md) |
+| Linux x64   | `Utopia-Launcher-setup-VERSION.AppImage` | [Guide Linux](docs/INSTALLATION-LINUX.md) |
 
 > [!NOTE]
 > Le serveur Utopia tourne en **Minecraft 1.21.1 — NeoForge**.
 
 > [!IMPORTANT]
-> **Sur Mac**, l'application n'est pas signée auprès d'Apple : macOS la bloque au premier lancement.
-> Suis le guide [Installer le launcher sur Mac](docs/INSTALLATION-MAC.md) — l'autorisation ne se fait qu'une seule fois.
+> Le launcher n'est pas signé numériquement : **Windows** affiche un avertissement SmartScreen et **macOS**
+> bloque l'application au premier lancement. Les guides ci-dessus expliquent comment l'autoriser en quelques
+> clics — c'est à faire une seule fois.
 
 ---
 
