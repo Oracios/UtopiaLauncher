@@ -14,6 +14,338 @@
     <!-- ARTICLE 1 — Le plus récent EN PREMIER        -->
     <!-- ============================================ -->
     <item>
+      <title>Les chantiers communautaires commencent</title>
+      <link>https://apk.nerysia.fr</link>
+      <pubDate>Thu, 27 Aug 2026 20:34:18 +0200</pubDate>
+      <dc:creator>Oracios</dc:creator>
+      <slash:comments>0</slash:comments>
+      <content:encoded><![CDATA[
+        <h2>🏠 Les chantiers communautaires commencent</h2>
+        <p><em>Les habitants peuvent désormais unir leurs ressources pour transformer durablement Utopia.</em></p>
+
+        <h3>🏠 Participer à un chantier</h3>
+        <p>Un <strong>Chef de chantier</strong> est installé à proximité de chaque projet. Il accepte les ressources et les Utopièces nécessaires à sa réalisation.</p>
+        <p>Chaque dépôt fait progresser un objectif commun à l’ensemble du serveur.</p>
+
+        <h3>📜 Suivre la progression</h3>
+        <ul>
+          <li>Quantités réunies et restantes</li>
+          <li>Pourcentage de progression</li>
+          <li>Historique des contributions</li>
+          <li>Classement des participants</li>
+          <li>Top 3 affiché au-dessus du Chef de chantier</li>
+        </ul>
+
+        <p>Les trois plus grands contributeurs recevront chacun une récompense.</p>
+
+        <h3>🌴 Premier projet : le pont</h3>
+        <p>Une fois tous les objectifs atteints, les dépôts seront fermés et le staff pourra organiser la finalisation officielle du chantier.</p>
+
+        <p><em>Le premier chantier sera le pont. L’avenir de l’île dépend désormais de ses habitants.</em></p>
+      ]]></content:encoded>
+    </item>
+
+    <!-- ============================================ -->
+    <!-- ARTICLE 2 — Les métiers d’Utopia             -->
+    <!-- ============================================ -->
+    <item>
+      <title>Les métiers donnent du travail à Utopia</title>
+      <link>https://apk.nerysia.fr</link>
+      <pubDate>Fri, 21 Aug 2026 20:09:42 +0200</pubDate>
+      <dc:creator>Oracios</dc:creator>
+      <slash:comments>0</slash:comments>
+      <content:encoded><![CDATA[
+        <h2>💰 Les métiers donnent du travail à Utopia</h2>
+        <p><em>Les habitants peuvent désormais occuper une véritable fonction et être rémunérés pour leurs services.</em></p>
+
+        <h3>📜 Des métiers administrés</h3>
+        <p>Le maire et les administrateurs peuvent créer, attribuer, modifier ou retirer un métier. Ils déterminent également son salaire.</p>
+        <p>Un joueur peut exercer plusieurs métiers si ses différentes fonctions restent compatibles.</p>
+
+        <h3>💰 Des salaires quotidiens</h3>
+        <ul>
+          <li>Paiement chaque jour à <strong>midi, heure de Paris</strong></li>
+          <li>Versement effectué par la Banque d’Utopia</li>
+          <li>Si le joueur est absent, son salaire est conservé</li>
+          <li>Il sera automatiquement versé à sa prochaine connexion</li>
+        </ul>
+
+        <h3>🌴 Proposez votre propre métier</h3>
+        <p>Une idée utile à la communauté peut être présentée au banquier avec un dossier détaillant son rôle, ses services et son intérêt pour l’île.</p>
+
+        <p><em>Journaliste, organisateur, intendant ou ingénieur : trouvez la fonction qui fera vivre Utopia.</em></p>
+      ]]></content:encoded>
+    </item>
+
+    <!-- ============================================ -->
+    <!-- ARTICLE 3 — Le Capitaine Transit             -->
+    <!-- ============================================ -->
+    <item>
+      <title>Le Capitaine Transit prend le large</title>
+      <link>https://apk.nerysia.fr</link>
+      <pubDate>Sat, 15 Aug 2026 11:27:16 +0200</pubDate>
+      <dc:creator>Oracios</dc:creator>
+      <slash:comments>0</slash:comments>
+      <content:encoded><![CDATA[
+        <h2>🌴 Le Capitaine Transit prend le large</h2>
+        <p><em>L’île principale est désormais protégée. Pour récolter vos ressources, il faudra embarquer vers le continent.</em></p>
+
+        <h3>🏠 Où trouver le capitaine ?</h3>
+        <p>Le bateau du Capitaine Transit se trouve <strong>tout au nord de l’île des commerces et des bâtiments publics</strong>.</p>
+
+        <h3>🌴 Direction le continent des ressources</h3>
+        <p>Le capitaine propose quatre destinations :</p>
+        <ul>
+          <li>Nord</li>
+          <li>Sud</li>
+          <li>Est</li>
+          <li>Ouest</li>
+        </ul>
+
+        <p>Chaque direction permet de rejoindre une partie différente du continent afin d’explorer et de récolter loin de l’île principale.</p>
+
+        <h3>📜 Une île à préserver</h3>
+        <p>La récupération de ressources naturelles est interdite sur l’île d’Utopia. Ses paysages et ses constructions doivent rester intacts.</p>
+
+        <p><em>Choisissez votre direction, montez à bord et revenez les cales remplies.</em></p>
+      ]]></content:encoded>
+    </item>
+
+    <!-- ============================================ -->
+    <!-- ARTICLE 4 — Le système de paris              -->
+    <!-- ============================================ -->
+    <item>
+      <title>Les paris débarquent sur Utopia</title>
+      <link>https://apk.nerysia.fr</link>
+      <pubDate>Sun, 09 Aug 2026 19:12:37 +0200</pubDate>
+      <dc:creator>Oracios</dc:creator>
+      <slash:comments>0</slash:comments>
+      <content:encoded><![CDATA[
+        <h2>💰 Les paris débarquent sur Utopia</h2>
+        <p><em>Vous pouvez désormais miser vos Utopièces sur les événements les plus sérieux comme sur les idées les plus absurdes.</em></p>
+
+        <h3>💰 Créer un pari</h3>
+        <p>Depuis le <code>/menu</code>, choisissez un nom, une description, la durée des mises et jusqu’à <strong>12 propositions</strong> différentes.</p>
+        <p>Un bookmaker apparaît ensuite pour permettre aux habitants de placer leurs mises.</p>
+
+        <h3>📜 Résoudre le pari</h3>
+        <ul>
+          <li>Le pari peut se clôturer automatiquement à la fin du temps prévu</li>
+          <li>Son créateur peut le fermer plus tôt si toutes les mises sont terminées</li>
+          <li>Les gains sont calculés à partir des mises et des cotes</li>
+          <li>En cas d’annulation, toutes les mises sont remboursées</li>
+        </ul>
+
+        <p>Chaque joueur ne peut posséder qu’<strong>un seul pari en cours</strong>. Aucune nouvelle Utopièce n’est créée : les gains proviennent uniquement des sommes misées par les joueurs.</p>
+
+        <p><em>Élections, courses ou catastrophes industrielles : à vous de trouver sur quoi Utopia misera.</em></p>
+      ]]></content:encoded>
+    </item>
+
+    <!-- ============================================ -->
+    <!-- ARTICLE 5 — Le système de devis              -->
+    <!-- ============================================ -->
+    <item>
+      <title>Les devis sont enfin opérationnels</title>
+      <link>https://apk.nerysia.fr</link>
+      <pubDate>Mon, 03 Aug 2026 21:16:24 +0200</pubDate>
+      <dc:creator>Oracios</dc:creator>
+      <slash:comments>0</slash:comments>
+      <content:encoded><![CDATA[
+        <h2>📜 Les devis sont enfin opérationnels</h2>
+        <p><em>Après de nombreux calculs, quelques bugs et beaucoup trop de lignes de code, les contrats commerciaux arrivent enfin sur Utopia.</em></p>
+
+        <h3>📜 Créer un devis</h3>
+        <p>Utilisez le <code>/menu</code>, puis ouvrez <strong>Mes devis</strong> pour proposer l’achat ou la vente de biens et de services.</p>
+        <p>Chaque ligne correspond à une action, un objet ou un service. Indiquez ensuite :</p>
+        <ul>
+          <li>La quantité souhaitée</li>
+          <li>Le prix d’une unité</li>
+          <li>La durée de validité</li>
+          <li>Les éventuelles conditions</li>
+          <li>Le joueur concerné</li>
+        </ul>
+
+        <h3>💰 Un total calculé automatiquement</h3>
+        <p>Pour <strong>1 000 bûches</strong> achetées à <strong>1 Utopièce l’unité</strong>, le devis affichera automatiquement un total de <strong>1 000 Utopièces</strong>.</p>
+
+        <p><em>Tout est désormais écrit, calculé et suivi. Les accords conclus sur un coin de table appartiennent presque au passé.</em></p>
+      ]]></content:encoded>
+    </item>
+
+    <!-- ============================================ -->
+    <!-- ARTICLE 6 — Le maire et les élections        -->
+    <!-- ============================================ -->
+    <item>
+      <title>Utopia se prépare à élire son maire</title>
+      <link>https://apk.nerysia.fr</link>
+      <pubDate>Mon, 27 Jul 2026 10:24:51 +0200</pubDate>
+      <dc:creator>Oracios</dc:creator>
+      <slash:comments>0</slash:comments>
+      <content:encoded><![CDATA[
+        <h2>📜 Utopia se prépare à élire son maire</h2>
+        <p><em>La vie politique d’Utopia commence officiellement.</em></p>
+
+        <h3>📜 Les élections municipales</h3>
+        <p>Lorsque des élections sont organisées, les habitants peuvent découvrir les candidats, suivre leurs propositions et voter pour la personne qu’ils souhaitent voir diriger la ville.</p>
+        <p>Les candidats devront convaincre la communauté avec un programme sérieux… ou suffisamment séduisant.</p>
+
+        <h3>💰 Les responsabilités du maire</h3>
+        <ul>
+          <li>Participer aux principales décisions économiques</li>
+          <li>Gérer les taxes et certains prix</li>
+          <li>Superviser les actes de propriété et les licences commerciales</li>
+          <li>Attribuer les métiers et fixer leurs salaires avec les administrateurs</li>
+          <li>Étudier les demandes de subvention</li>
+        </ul>
+
+        <h3>🌴 Une ville dirigée par ses habitants</h3>
+        <p>Le maire disposera de véritables responsabilités, mais devra également répondre de ses décisions devant la communauté.</p>
+
+        <p><em>Préparez vos programmes : l’avenir politique d’Utopia pourrait bientôt être entre vos mains.</em></p>
+      ]]></content:encoded>
+    </item>
+
+    <!-- ============================================ -->
+    <!-- ARTICLE 7 — Le marchand mongol               -->
+    <!-- ============================================ -->
+    <item>
+      <title>Le marchand mongol est arrivé à Utopia</title>
+      <link>https://apk.nerysia.fr</link>
+      <pubDate>Wed, 22 Jul 2026 17:37:08 +0200</pubDate>
+      <dc:creator>Oracios</dc:creator>
+      <slash:comments>0</slash:comments>
+      <content:encoded><![CDATA[
+        <h2>🌴 Le marchand mongol est arrivé à Utopia</h2>
+        <p><em>Une étrange montgolfière vient d’amener une marchande venue chercher des marchandises introuvables dans sa région.</em></p>
+
+        <h3>📜 Une commande différente chaque jour</h3>
+        <ul>
+          <li>Un nouvel objet est demandé toutes les <strong>24 heures réelles</strong></li>
+          <li>Chaque objet livré rapporte <strong>1 Utopièce</strong></li>
+          <li>Les objets demandés peuvent être difficiles à fabriquer en grande quantité</li>
+          <li>Le marchand mongol n’est présent que pendant la journée Minecraft</li>
+        </ul>
+
+        <h3>💰 Des quantités limitées</h3>
+        <ul>
+          <li>Maximum de <strong>200 objets par joueur et par jour</strong></li>
+          <li>Réserve commune de <strong>1 000 objets</strong> pour tout le serveur</li>
+          <li>Les joueurs peuvent se répartir librement la commande</li>
+        </ul>
+
+        <p>L’interface indique l’objet recherché, votre progression personnelle et la quantité restante dans la réserve commune.</p>
+
+        <p><em>Préparez vos machines : sa prochaine commande pourrait faire la fortune de toute une industrie.</em></p>
+      ]]></content:encoded>
+    </item>
+
+    <!-- ============================================ -->
+    <!-- ARTICLE 8 — La Banque d’Utopia               -->
+    <!-- ============================================ -->
+    <item>
+      <title>La Banque d’Utopia ouvre ses comptes</title>
+      <link>https://apk.nerysia.fr</link>
+      <pubDate>Sat, 18 Jul 2026 20:11:33 +0200</pubDate>
+      <dc:creator>Oracios</dc:creator>
+      <slash:comments>0</slash:comments>
+      <content:encoded><![CDATA[
+        <h2>💰 La Banque d’Utopia ouvre ses comptes</h2>
+        <p><em>Les Utopièces peuvent désormais être conservées, transférées et même placées.</em></p>
+
+        <h3>💰 L’UtoCard</h3>
+        <ul>
+          <li>Disponible au <strong>guichet numéro 2</strong></li>
+          <li>Permet de déposer et retirer ses Utopièces</li>
+          <li>Permet d’effectuer des virements entre joueurs</li>
+          <li>Obligatoire pour déposer des pièces sur son compte bancaire</li>
+        </ul>
+
+        <h3>📜 Le livret d’épargne</h3>
+        <p>Un livret peut être ouvert auprès du banquier ou de la banquière. Chaque nuit à <strong>minuit, heure de Paris</strong>, les pièces placées peuvent générer des intérêts.</p>
+        <p>Les taux et les différents paliers sont définis par la banque et peuvent évoluer.</p>
+
+        <h3>🌴 Les plus grandes fortunes</h3>
+        <p>Un classement installé à l’entrée de la banque affiche les habitants possédant les comptes les mieux remplis.</p>
+
+        <p><em>Épargnez, investissez et tentez d’inscrire votre nom parmi les plus grandes fortunes d’Utopia.</em></p>
+      ]]></content:encoded>
+    </item>
+
+    <!-- ============================================ -->
+    <!-- ARTICLE 9 — L’auberge                        -->
+    <!-- ============================================ -->
+    <item>
+      <title>L’auberge accueille ses premiers résidents</title>
+      <link>https://apk.nerysia.fr</link>
+      <pubDate>Tue, 14 Jul 2026 11:43:26 +0200</pubDate>
+      <dc:creator>Oracios</dc:creator>
+      <slash:comments>0</slash:comments>
+      <content:encoded><![CDATA[
+        <h2>🏠 L’auberge accueille ses premiers résidents</h2>
+        <p><em>Les nouveaux habitants d’Utopia disposent désormais d’un toit pour commencer leur aventure.</em></p>
+
+        <h3>🏠 Des chambres temporaires</h3>
+        <ul>
+          <li>Les joueurs sans habitation peuvent demander une chambre</li>
+          <li>La location est gérée par l’aubergiste ou, en son absence, par un administrateur</li>
+          <li>Le tarif dépend du nombre de nuits</li>
+          <li>Le paiement peut être immédiat ou inscrit dans le registre de l’auberge</li>
+        </ul>
+
+        <h3>📜 Les services disponibles</h3>
+        <ul>
+          <li>Nourriture fournie aux nouveaux résidents</li>
+          <li>Table d’enchantement complète</li>
+          <li>Machines Create basiques disponibles au rez-de-chaussée</li>
+        </ul>
+
+        <h3>💰 Attention aux impayés</h3>
+        <p>L’aubergiste peut expulser un résident ou bloquer temporairement l’accès à sa chambre en cas de dette non réglée.</p>
+
+        <p><em>Un lit, un repas et quelques machines : tout ce qu’il faut pour bien commencer sur Utopia.</em></p>
+      ]]></content:encoded>
+    </item>
+
+    <!-- ============================================ -->
+    <!-- ARTICLE 10 — Le marché flottant              -->
+    <!-- ============================================ -->
+    <item>
+      <title>Le marché flottant ouvre ses stands</title>
+      <link>https://apk.nerysia.fr</link>
+      <pubDate>Fri, 10 Jul 2026 19:18:47 +0200</pubDate>
+      <dc:creator>Oracios</dc:creator>
+      <slash:comments>0</slash:comments>
+      <content:encoded><![CDATA[
+        <h2>🌴 Le marché flottant ouvre ses stands</h2>
+        <p><em>Une nouvelle façon de vendre ponctuellement ses ressources vient d’arriver sur Utopia.</em></p>
+
+        <h3>🏠 Des stands accessibles à tous</h3>
+        <ul>
+          <li>Trouvez un emplacement libre sur le marché flottant</li>
+          <li>Chaque joueur peut occuper <strong>un seul stand</strong></li>
+          <li>Un stand peut contenir jusqu’à <strong>10 objets différents</strong> ou <strong>10 stacks de 64</strong></li>
+        </ul>
+
+        <h3>📜 Des ventes limitées dans le temps</h3>
+        <ul>
+          <li>Les objets peuvent rester en vente pendant <strong>48 heures maximum</strong></li>
+          <li>Les invendus sont ensuite envoyés dans la réserve du marché</li>
+          <li>Adressez-vous à un administrateur pour les récupérer</li>
+        </ul>
+
+        <h3>💰 Une taxe commerciale</h3>
+        <p>Une taxe de <strong>25 %</strong> est appliquée à chaque vente : <strong>15 %</strong> sont versés à la mairie et <strong>10 %</strong> disparaissent de l’économie.</p>
+        <p>En raison des arrondis, un prix minimal de <strong>4 Utopièces par objet</strong> est conseillé.</p>
+
+        <p><em>Pas besoin d’acheter un commerce pour devenir marchand le temps de quelques ventes !</em></p>
+      ]]></content:encoded>
+    </item>
+
+    <!-- ============================================ -->
+    <!-- ARTICLE 11 — Les parcelles                    -->
+    <!-- ============================================ -->
+    <item>
       <title>Nouvelle fonctionnalité — Les parcelles</title>
       <link>https://apk.nerysia.fr</link>
       <pubDate>Mon, 06 Jul 2026 10:32:53 +0200</pubDate>
@@ -46,56 +378,46 @@
     </item>
 
     <!-- ============================================ -->
-    <!-- ARTICLE 2 — Économie et quêtes               -->
+    <!-- ARTICLE 12 — Le mystère des 36 pièces        -->
     <!-- ============================================ -->
     <item>
-      <title>🪙 Luxia obtient enfin ses 36 pièces</title>
+      <title>💰 Le mystère des 36 pièces de Luxia</title>
       <link>https://apk.nerysia.fr</link>
-      <pubDate>Wed, 17 Jun 2026 20:00:00 +0200</pubDate>
+      <pubDate>Wed, 17 Jun 2026 20:07:19 +0200</pubDate>
       <dc:creator>Oracios</dc:creator>
       <slash:comments>0</slash:comments>
       <content:encoded><![CDATA[
         <div style="text-align:center;">
-          <h1>🪙 Luxia obtient enfin ses 36 pièces</h1>
-          <p><em>Une victoire historique pour l'économie d'Utopia.</em></p>
+          <h1>💰 Le mystère des 36 pièces de Luxia</h1>
+          <p><em>Trente-six Utopièces sont apparues. Personne ne sait réellement pourquoi.</em></p>
         </div>
 
         <hr>
 
-        <h3>💰 Économie sous contrôle</h3>
+        <h3>💰 Une première historique</h3>
         <ul>
-          <li><strong>Luxia</strong> a rééquilibré les récompenses des quêtes</li>
-          <li>Les <strong>Utopièces</strong> ont été surveillées de très près</li>
-          <li>Plusieurs abus économiques ont été calmement regardés, puis violemment corrigés</li>
+          <li>Luxia est officiellement devenue la première joueuse d’Utopia à recevoir exactement <strong>36 Utopièces</strong></li>
+          <li>La somme est authentique et parfaitement utilisable</li>
+          <li>Pourtant, aucune quête, transaction ou récompense connue ne correspond à ce versement</li>
         </ul>
 
-        <h3>📜 Quêtes retravaillées</h3>
+        <h3>📜 Des registres silencieux</h3>
         <ul>
-          <li>Des dizaines de quêtes ont été ajustées</li>
-          <li>Les récompenses trop généreuses ont été réduites</li>
-          <li>Les quêtes absurdes ont été conservées, mais avec un meilleur taux de souffrance</li>
+          <li>Aucun virement n’apparaît dans les archives</li>
+          <li>Aucun membre de l’administration ne revendique l’opération</li>
+          <li>Une ligne mentionnant simplement « 36 » aurait été retrouvée dans un ancien registre de la banque</li>
         </ul>
 
-        <h3>🪙 Récompense historique</h3>
-        <ul>
-          <li><strong>Oracios</strong> a puisé dans sa fortune personnelle</li>
-          <li><strong>Luxia</strong> a reçu la somme astronomique de <strong>36 pièces</strong></li>
-          <li>Les économistes d'Utopia parlent déjà du plus gros investissement jamais réalisé par Oracios</li>
-        </ul>
+        <h3>🌴 L’enquête continue</h3>
+        <p>Depuis cette découverte, les versions se multiplient : erreur de calcul, récompense oubliée, vieille dette de la mairie… ou intervention d’une personne qui ne souhaite pas être retrouvée.</p>
+        <p>La banque refuse désormais de commenter l’affaire. Luxia, elle, possède toujours les 36 pièces.</p>
 
-        <h3>🌴 Situation actuelle</h3>
-        <ul>
-          <li>L'économie est stable pour environ cinq minutes</li>
-          <li>Luxia est déjà repartie travailler sur les prochaines quêtes</li>
-          <li>Quelqu'un a encore essayé de transformer trois patates et une poule en empire financier</li>
-        </ul>
-
-        <p><em>Merci Luxia pour ton sacrifice au nom de l'économie d'Utopia. 🫡</em></p>
+        <p><em>Certaines fortunes commencent avec du travail. D’autres apparaissent sans explication.</em></p>
       ]]></content:encoded>
     </item>
 
     <!-- ============================================ -->
-    <!-- ARTICLE 3 — Présentation d’Utopia 3.5        -->
+    <!-- ARTICLE 13 — Présentation d’Utopia 3.5       -->
     <!-- ============================================ -->
     <item>
       <title>Bienvenue sur Utopia 3.5 !</title>
@@ -127,7 +449,7 @@
     </item>
 
     <!-- ============================================ -->
-    <!-- ARTICLE 4 — Discord                          -->
+    <!-- ARTICLE 14 — Discord                         -->
     <!-- ============================================ -->
     <item>
       <title>Rejoins le Discord !</title>
