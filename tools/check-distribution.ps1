@@ -1,11 +1,20 @@
 # Verifie que le distribution.json LIVE ne contient aucun lien casse (404).
 #
 # A lancer APRES chaque changement de mods sur le FTP (ou n'importe quand) pour
-# savoir en quelques secondes si une regeneration est necessaire. Contrairement
-# a la generation, ce script ne touche a rien : il lit juste la distribution
-# publiee et teste chaque URL de mod/fichier.
+# savoir en quelques secondes si une regeneration est necessaire. Ce script ne
+# modifie rien : il lit la distribution publiee et teste chaque URL.
 #
-# Usage: .\tools\check-distribution.ps1
+# Necessite PowerShell 7+.  Usage :  pwsh .\tools\check-distribution.ps1
+
+# Windows PowerShell 5.1 ne connait pas "ForEach-Object -Parallel". Sans ce
+# garde, la boucle echouait et le script annoncait "aucun lien casse" sans avoir
+# rien teste du tout : un faux positif bien pire qu'une erreur.
+if ($PSVersionTable.PSVersion.Major -lt 7) {
+    Write-Host "ERREUR : ce script necessite PowerShell 7 ou plus recent." -ForegroundColor Red
+    Write-Host ("  Version detectee : {0}" -f $PSVersionTable.PSVersion) -ForegroundColor Yellow
+    Write-Host "  Relance-le avec :  pwsh .\tools\check-distribution.ps1" -ForegroundColor Cyan
+    exit 2
+}
 
 $distUrl = "https://apk.nerysia.fr/utopia-laucher/distribution.json"
 
@@ -14,7 +23,7 @@ try {
     $bust = [DateTimeOffset]::Now.ToUnixTimeSeconds()
     $dist = Invoke-RestMethod -Uri "$distUrl`?t=$bust" -TimeoutSec 30
 } catch {
-    Write-Host "ERREUR: impossible de recuperer le distribution.json ($($_.Exception.Message))" -ForegroundColor Red
+    Write-Host "ERREUR : impossible de recuperer le distribution.json ($($_.Exception.Message))" -ForegroundColor Red
     exit 1
 }
 
@@ -35,32 +44,40 @@ Collect-Urls $server.modules
 Write-Host ("Liens a verifier : {0}" -f $urls.Count) -ForegroundColor Cyan
 Write-Host ""
 
-# HEAD en parallele (PowerShell 7+). N'emet un objet que pour les liens casses.
-$bad = $urls | ForEach-Object -ThrottleLimit 24 -Parallel {
+# HEAD en parallele. On emet un resultat pour CHAQUE lien (et pas seulement pour
+# les casses), ce qui permet de verifier ensuite qu'ils ont tous ete testes.
+$results = @($urls | ForEach-Object -ThrottleLimit 24 -Parallel {
     $item = $_
+    $code = 0
     try {
         $r = Invoke-WebRequest -Uri $item.url -Method Head -TimeoutSec 20 -ErrorAction Stop
-        if ($r.StatusCode -ne 200) {
-            [pscustomobject]@{ name = $item.name; type = $item.type; code = $r.StatusCode }
-        }
+        $code = [int]$r.StatusCode
     } catch {
-        $code = 0
         try { if ($_.Exception.Response) { $code = [int]$_.Exception.Response.StatusCode.value__ } } catch {}
-        [pscustomobject]@{ name = $item.name; type = $item.type; code = $code }
     }
+    [pscustomobject]@{ name = $item.name; type = $item.type; code = $code }
+})
+
+# Garde-fou : si tous les liens n'ont pas ete testes, on ne declare surtout pas
+# que tout va bien.
+if ($results.Count -ne $urls.Count) {
+    Write-Host ("ERREUR : seuls {0} liens sur {1} ont pu etre testes." -f $results.Count, $urls.Count) -ForegroundColor Red
+    Write-Host "  Resultat NON fiable : relance la verification." -ForegroundColor Yellow
+    exit 1
 }
 
-if (-not $bad -or @($bad).Count -eq 0) {
-    Write-Host "OK : aucun lien casse. La distribution est saine, les joueurs peuvent tout telecharger." -ForegroundColor Green
+$bad = @($results | Where-Object { $_.code -ne 200 })
+
+if ($bad.Count -eq 0) {
+    Write-Host ("OK : {0} liens verifies, aucun casse. Les joueurs peuvent tout telecharger." -f $results.Count) -ForegroundColor Green
     exit 0
 } else {
-    $bad = @($bad)
-    Write-Host ("ATTENTION : {0} lien(s) casse(s) !" -f $bad.Count) -ForegroundColor Red
+    Write-Host ("ATTENTION : {0} lien(s) casse(s) sur {1} !" -f $bad.Count, $results.Count) -ForegroundColor Red
     foreach ($b in $bad) {
         Write-Host ("  [HTTP {0}] {1} : {2}" -f $b.code, $b.type, $b.name) -ForegroundColor Yellow
     }
     Write-Host ""
-    Write-Host "Cause probable : tu as change des mods sur le FTP sans regenerer." -ForegroundColor White
+    Write-Host "Cause probable : des mods ont change sur le FTP sans regeneration." -ForegroundColor White
     Write-Host "Solution       : .\tools\generate-distribution.ps1 -Bump patch" -ForegroundColor Cyan
     exit 1
 }
