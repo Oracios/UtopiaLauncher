@@ -1161,6 +1161,13 @@ async function loadNews(){
         const newsHost = new URL(newsFeed).origin + '/'
         $.ajax({
             url: newsFeed,
+            // Le flux est servi sans en-tete Cache-Control : Chromium lui
+            // applique alors son cache heuristique et des joueurs restent
+            // bloques des heures sur d'anciennes news (chacun ayant mis en
+            // cache a un moment different, ils ne voient pas la meme chose).
+            // cache:false ajoute un parametre unique a chaque appel, ce qui
+            // garantit de toujours lire le flux a jour au lancement.
+            cache: false,
             success: (data) => {
                 const items = $(data).find('item')
                 const articles = []
@@ -1205,7 +1212,7 @@ async function loadNews(){
                     articles
                 })
             },
-            timeout: 2500
+            timeout: 10000
         }).catch(err => {
             resolve({
                 articles: null
